@@ -10,9 +10,10 @@ const galleryItems = [
     id: "gallery-1",
     label: "Central AC Install — Floral Park, Nassau County",
     beforeAlt: "Old AC condenser before replacement",
-    afterAlt:  "New Carrier AC condenser after installation",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
+    afterAlt:  "New AC condenser fully installed and running",
+    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
+    before: "/images/IMG_9688-1024x682.jpg",
+    after:  "/images/IMG_9750-1024x683.jpg",
     category: "AC Installation",
   },
   {
@@ -20,45 +21,30 @@ const galleryItems = [
     label: "Boiler Replacement — New Hyde Park",
     beforeAlt: "Old boiler removed prior to replacement",
     afterAlt:  "New Burnham boiler fully installed",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
+    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
+    before: "/images/IMG_9750-1024x683.jpg",
+    after:  "/images/iStock-530983109-1.jpg",
     category: "Boiler",
   },
   {
     id: "gallery-3",
-    label: "Air Handler & Duct Work — Nassau County",
-    beforeAlt: "Old air handler and ductwork before service",
-    afterAlt:  "New air handler installation with updated duct runs",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
-    category: "Air Handler",
-  },
-  {
-    id: "gallery-4",
-    label: "Mini Split Install — Finished Basement",
+    label: "Mini Split Install — Finished Basement, Nassau County",
     beforeAlt: "Unfinished space before mini split install",
-    afterAlt:  "Wall-mounted mini split system installed and running",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
+    afterAlt:  "Wall-mounted mini split installed and running",
+    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
+    before: "/images/iStock-530983109-1.jpg",
+    after:  "/images/IMG_9688-1024x682.jpg",
     category: "Mini Split",
   },
   {
-    id: "gallery-5",
-    label: "Full System Swap — Western Suffolk",
+    id: "gallery-4",
+    label: "Full System Replacement — Western Suffolk",
     beforeAlt: "Aging HVAC system before full replacement",
     afterAlt:  "Complete new HVAC system installed and operational",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
+    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
+    before: "/images/IMG_9688-1024x682.jpg",
+    after:  "/images/IMG_9750-1024x683.jpg",
     category: "System Replacement",
-  },
-  {
-    id: "gallery-6",
-    label: "Water Heater Replacement — Queens Village",
-    beforeAlt: "Old water heater prior to removal",
-    afterAlt:  "New water heater installed and ready",
-    before: "https://www.floralparkhvac.com/",
-    after:  "https://www.floralparkhvac.com/",
-    category: "Water Heater",
   },
 ];
 
@@ -72,58 +58,72 @@ function GalleryCard({ item, delay }: { item: typeof galleryItems[number]; delay
   return (
     <div
       ref={ref}
-      className={`user-grid-item user-grid-item--three fadeInUpS wow${vis}`}
-      style={{ animationDelay: delay }}
+      className={`fadeInUpS wow${vis}`}
+      style={{
+        animationDelay: delay,
+        background: "#fff",
+        border: "1px solid #e8e8e8",
+        borderRadius: "6px",
+        overflow: "hidden",
+        padding: "2rem",
+      }}
     >
-      <div className="user-grid-item-info">
-        <span
-          className="p3 ia-medium"
-          style={{
-            display: "inline-block",
-            marginBottom: "1rem",
-            padding: "0.3rem 1rem",
-            background: "var(--ia-sky, #a1c5d3)",
-            borderRadius: "4px",
-            fontSize: "1.2rem",
-          }}
-        >
-          {item.category}
-        </span>
+      {/* Category badge */}
+      <span
+        style={{
+          display: "inline-block",
+          marginBottom: "1.5rem",
+          padding: "0.4rem 1.2rem",
+          background: "var(--ia-sky, #a1c5d3)",
+          borderRadius: "4px",
+          fontSize: "1.2rem",
+          fontWeight: 600,
+          color: "#1a2a3a",
+        }}
+      >
+        {item.category}
+      </span>
 
-        {/* Before / After image pair */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", marginBottom: "1.2rem" }}>
-          <div>
-            <div
-              style={{
-                background: `url(${item.before}) no-repeat 50% 50% / cover`,
-                backgroundColor: "#1a2a3a",
-                height: "16rem",
-                borderRadius: "4px",
-              }}
-              role="img"
-              aria-label={item.beforeAlt}
-            />
-            <p className="p3 ia-dark" style={{ marginTop: "0.5rem", textAlign: "center", fontWeight: 600 }}>Before</p>
-            {/* [TODO: swap image — before photo] */}
-          </div>
-          <div>
-            <div
-              style={{
-                background: `url(${item.after}) no-repeat 50% 50% / cover`,
-                backgroundColor: "#1a2a3a",
-                height: "16rem",
-                borderRadius: "4px",
-              }}
-              role="img"
-              aria-label={item.afterAlt}
-            />
-            <p className="p3 ia-dark" style={{ marginTop: "0.5rem", textAlign: "center", fontWeight: 600 }}>After</p>
-            {/* [TODO: swap image — after photo] */}
-          </div>
+      {/* Before / After image pair */}
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "1.2rem",
+          marginBottom: "1.5rem",
+        }}
+      >
+        <div>
+          <div
+            style={{
+              background: `url(${item.before}) no-repeat 50% 50% / cover`,
+              backgroundColor: "#1a2a3a",
+              aspectRatio: "4 / 3",
+              borderRadius: "4px",
+              width: "100%",
+            }}
+            role="img"
+            aria-label={item.beforeAlt}
+          />
+          <p style={{ marginTop: "0.6rem", textAlign: "center", fontWeight: 700, fontSize: "1.4rem" }}>Before</p>
         </div>
-
-        <h3 className="h6 ia-margin-1">{item.label}</h3>
+        <div>
+          <div
+            style={{
+              background: `url(${item.after}) no-repeat 50% 50% / cover`,
+              backgroundColor: "#1a2a3a",
+              aspectRatio: "4 / 3",
+              borderRadius: "4px",
+              width: "100%",
+            }}
+            role="img"
+            aria-label={item.afterAlt}
+          />
+          <p style={{ marginTop: "0.6rem", textAlign: "center", fontWeight: 700, fontSize: "1.4rem" }}>After</p>
+        </div>
       </div>
+
+      <h3 className="h5 ia-margin-0" style={{ fontSize: "1.8rem" }}>{item.label}</h3>
     </div>
   );
 }
@@ -164,9 +164,10 @@ export default function GalleryPage() {
               <div className={`sub-heading fadeInUpS wow${heroVis}`}>Real Results</div>
               <div className={`content-entry fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
                 <p>
-                  Real HVAC jobs done by Floral Park HVAC techs across Nassau County,
-                  Western Suffolk, and Northern Queens.
-                  {/* [TODO: Replace all placeholder images with actual job photos from client] */}
+                  Every job below was done by a Floral Park HVAC technician across
+                  Nassau County, Western Suffolk, and Northern Queens. Real systems,
+                  real homes, real results.
+                  {/* [TODO: Replace placeholder images with actual job photos from client] */}
                 </p>
               </div>
             </div>
@@ -221,11 +222,23 @@ export default function GalleryPage() {
               and stand behind every job we complete.
             </p>
           </div>
-          <div className="user-grid-list user-grid-list--small">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "3rem",
+            }}
+            className="gallery-grid"
+          >
             {galleryItems.map((item, i) => (
-              <GalleryCard key={item.id} item={item} delay={`${(i % 3) * 0.1}s`} />
+              <GalleryCard key={item.id} item={item} delay={`${(i % 2) * 0.1}s`} />
             ))}
           </div>
+          <style>{`
+            @media (max-width: 640px) {
+              .gallery-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </div>
       </div>
 
@@ -245,8 +258,8 @@ export default function GalleryPage() {
             <div className="content-entry">
               <p>
                 Call <strong>(516) 855-4328</strong> — we&apos;ll give you an
-                honest price before we start, and we won&apos;t leave until
-                the job is done right.
+                honest price before we start, and we won&apos;t leave until the
+                job is done right.
               </p>
             </div>
             <div className="front-donation__btn-wrap">
