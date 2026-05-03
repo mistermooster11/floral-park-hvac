@@ -42,3 +42,6 @@ next-env.d.ts
 
 # download
 /downloaded
+
+# nested template copy (not part of this project)
+/PipeMonkey-Redesign
