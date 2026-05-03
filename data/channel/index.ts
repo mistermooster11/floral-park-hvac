@@ -1,17 +1,9 @@
 import type { ChannelPageData } from "@/components/custom/channel/types";
-import associations    from "./associations";
-import corrections     from "./corrections";
-import highSchools     from "./high-schools";
-import postsecondary   from "./postsecondary";
-import pipemonkeys     from "./pipemonkeys";
 import floralparkhvac  from "./floralparkhvac";
 
+// Only Floral Park HVAC's own channel page is active.
+// Legacy template channel data files are retained on disk but not imported or mapped.
 const channelDataMap: Record<string, ChannelPageData> = {
-  associations,
-  corrections,
-  "high-schools": highSchools,
-  postsecondary,
-  pipemonkeys,
   floralparkhvac,
 };
 

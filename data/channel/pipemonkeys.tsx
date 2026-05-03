@@ -74,7 +74,7 @@ const pipemonkeys: ChannelPageData = {
   resources: {
     title: "Quick Links",
     resources: [
-      { title: "Call Us Now — (718) 749-1830",         href: "tel:7187491830",           icon: "icon-message" },
+      { title: "Call Us Now — (516) 855-4328",         href: "tel:5168554328",           icon: "icon-message" },
       { title: "Contact Us Online",                    href: "/contact-us",              icon: "icon-mail"    },
       { title: "Our Services",                         href: "/craft-catalog",           icon: "icon-link"    },
       { title: "Service Areas",                        href: "#crafts",                  icon: "icon-info"    },
@@ -116,18 +116,18 @@ const pipemonkeys: ChannelPageData = {
         If your sink, toilet, tub, or main line is overflowing, don&rsquo;t
         wait. Our Brooklyn &amp; Queens techs handle urgent clogs every single
         day and are ready to help right now. Call{" "}
-        <strong>(718) 749-1830</strong> for fast response.
+        <strong>(516) 855-4328</strong> for fast response.
       </p>
     ),
     buttonLabel: "Call Now",
-    buttonHref:  "tel:7187491830",
+    buttonHref:  "tel:5168554328",
   },
 
   getInTouch: {
     body: (
       <p>
         Ready to schedule or have a question? Call us at{" "}
-        <strong>(718) 749-1830</strong> or use our online contact form and
+        <strong>(516) 855-4328</strong> or use our online contact form and
         we&rsquo;ll get back to you fast.
       </p>
     ),
