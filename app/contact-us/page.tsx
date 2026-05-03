@@ -7,25 +7,25 @@ import { useInView } from "framer-motion";
 
 const serviceAreas = [
   {
-    region: "Brooklyn",
-    description:
-      "Brooklyn homes deal with some of the oldest plumbing and drain systems in New York. From brownstones in Park Slope to pre-war buildings in Williamsburg and busy multi-family homes in Bay Ridge, we know the quirks of Brooklyn piping and arrive prepared every time.",
-    neighborhoods:
-      "Williamsburg • Greenpoint • Bushwick • Bed-Stuy • Crown Heights • Park Slope • Sunset Park • Bay Ridge • Bensonhurst • Dyker Heights • Gravesend • Sheepshead Bay • Coney Island & More",
-  },
-  {
-    region: "Queens",
-    description:
-      "Queens has one of the widest mixes of homes in NYC — from single-family houses in Whitestone and Bayside to apartment buildings in Astoria, LIC, and Flushing. Our team is trained for all of it.",
-    neighborhoods:
-      "Astoria • LIC • Maspeth • Flushing • Whitestone • Bayside • Forest Hills • Rego Park • Jackson Heights • Elmhurst • Middle Village & More",
-  },
-  {
     region: "Nassau County",
     description:
-      "Nassau County has a unique mix of older homes, long main lines, and mature trees that can cause everything from slow drains to full sewer backups. Our local techs understand how Nassau lines are built and where clogs usually form.",
+      "Nassau County is our home base. We service the full county — from older homes in Floral Park and New Hyde Park to new construction across the South Shore. We know the local housing stock and what Long Island HVAC systems deal with through hot summers and cold winters.",
     neighborhoods:
-      "Valley Stream • Elmont • Franklin Square • West Hempstead • Hempstead • Garden City • Mineola • New Hyde Park • Floral Park • Rockville Centre • Oceanside • Baldwin • Freeport • Merrick • Bellmore • Wantagh • Seaford • Massapequa • Levittown • East Meadow • Uniondale • Lynbrook • Malverne • Hewlett & More",
+      "Floral Park • New Hyde Park • Garden City • Mineola • Elmont • Valley Stream • Franklin Square • Hempstead • West Hempstead • Rockville Centre • Oceanside • Baldwin • Freeport • Merrick • Bellmore • Wantagh • Seaford • Massapequa • Levittown • East Meadow • Hicksville • Syosset • Uniondale • Lynbrook & More",
+  },
+  {
+    region: "Western Suffolk",
+    description:
+      "We extend our service into Western Suffolk County, covering the communities along the South Shore and the major towns along the Long Island Expressway corridor. Same honest pricing, same licensed techs, same fast scheduling.",
+    neighborhoods:
+      "Brentwood • Bay Shore • Deer Park • North Babylon • West Babylon • Lindenhurst • Amityville • Copiague • Wyandanch & Surrounding Areas",
+  },
+  {
+    region: "Northern Queens",
+    description:
+      "Our service area extends into Northern Queens, including the communities that border Nassau County. Whether you're in a single-family home or a multi-family building, our technicians are familiar with the housing in this part of Queens.",
+    neighborhoods:
+      "Floral Park (Queens) • Queens Village • Bellerose • Hollis • Jamaica • Glen Oaks • Little Neck • Bayside • Douglaston & Surrounding Neighborhoods",
   },
 ];
 
@@ -91,9 +91,9 @@ export default function ContactPage() {
               <div className={`sub-heading fadeInUpS wow${vis}`}>Reach Us</div>
               <div className={`content-entry fadeInUpS wow${vis}`} style={{ animationDelay: "0.1s" }}>
                 <p>
-                  Call us at <strong>(718) 749-1830</strong> or fill out the form
-                  below. Most calls are answered immediately — same-day scheduling
-                  available seven days a week.
+                  Call us at <strong>(516) 855-4328</strong> or fill out the form
+                  below. We answer fast — most calls are scheduled within 24 hours.
+                  Mon–Fri 7am–5pm &amp; Sat 7am–1pm.
                 </p>
               </div>
             </div>
@@ -105,9 +105,9 @@ export default function ContactPage() {
               </div>
               <ul className="quick-links" role="list">
                 <li className={`fadeInUpS wow${vis}`} style={{ animationDelay: "0.1s" }}>
-                  <a className="ia-link ia-link--arrow" href="tel:7187491830">
+                  <a className="ia-link ia-link--arrow" href="tel:5168554328">
                     <i className="icon-link" />
-                    <span>Call (718) 749-1830</span>
+                    <span>Call (516) 855-4328</span>
                   </a>
                 </li>
                 <li className={`fadeInUpS wow${vis}`} style={{ animationDelay: "0.2s" }}>
@@ -138,16 +138,16 @@ export default function ContactPage() {
             className={`h3 fadeInUpS wow${areasInView ? " is-visible" : ""}`}
             style={{ animationDelay: "0.1s" }}
           >
-            Service Areas
+            Our Service Areas
           </h2>
           <div
             className={`content-entry fadeInUpS wow${areasInView ? " is-visible" : ""}`}
             style={{ animationDelay: "0.2s" }}
           >
             <p>
-              We serve all of Brooklyn, Queens, and Nassau County. If you&apos;re
-              not sure whether we cover your neighborhood, just call — we almost
-              certainly do.
+              We proudly serve all of Nassau County, Western Suffolk, and
+              Northern Queens. Not sure if we cover your neighborhood?
+              Just call — we almost certainly do.
             </p>
           </div>
           <div className="user-grid-list user-grid-list--small">
@@ -155,6 +155,23 @@ export default function ContactPage() {
               <ServiceAreaCard key={area.region} area={area} delay={`${i * 0.1}s`} />
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ── Map Embed ── */}
+      <div className="flex-module" style={{ padding: "0 0 4rem" }}>
+        <div className="inner inner--slim-1172">
+          {/* [TODO: Replace with Google Maps embed centered on Floral Park, NY 11001 / 7 Florence St service area] */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48447.91!2d-73.7!3d40.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c268b7e2c7a3f1%3A0x1!2sFloral+Park%2C+NY+11001!5e0!3m2!1sen!2sus!4v1"
+            width="100%"
+            height="400"
+            style={{ border: 0, display: "block", borderRadius: "4px" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Floral Park HVAC Service Area Map"
+          />
         </div>
       </div>
 
@@ -167,25 +184,30 @@ export default function ContactPage() {
               className={`h3 fadeInUpS wow${formInView ? " is-visible" : ""}`}
               style={{ animationDelay: "0.1s" }}
             >
-              Schedule Service or Ask a Question
+              Schedule Service or Request an Estimate
             </h2>
           </div>
           <div className="content-block-in wide">
             <div className="content-block-text content-entry p2 full-width">
               <p>
-                Call us at <strong>(718) 749-1830</strong> or complete the form
-                below and we&apos;ll follow up fast — usually within the hour.
+                Fill out the form below and we&apos;ll follow up fast. Prefer to
+                call? Reach us directly at <strong>(516) 855-4328</strong>,
+                Mon–Fri 7am–5pm and Sat 7am–1pm.
               </p>
-              {/* TODO: Replace with Pipe Monkeys contact form embed (HubSpot, Gravity Forms, etc.) */}
-              <iframe
-                src="https://share.hsforms.com/2EvjaHNBmQBaJ9-YEhkKnagt3bsz"
-                width="100%"
-                height="800"
-                scrolling="yes"
-                className="iframe-class"
-                style={{ border: "none", display: "block" }}
-                title="Contact Pipe Monkeys"
-              />
+              {/* [TODO: Replace with Floral Park HVAC contact form embed (JotForm, HubSpot, Gravity Forms, etc.)] */}
+              <div
+                style={{
+                  background: "#f5f7fa",
+                  border: "2px dashed #ccd4de",
+                  borderRadius: "8px",
+                  padding: "4rem",
+                  textAlign: "center",
+                  color: "#666",
+                  fontSize: "1.4rem",
+                }}
+              >
+                [TODO: Embed contact/booking form here]
+              </div>
             </div>
           </div>
         </div>

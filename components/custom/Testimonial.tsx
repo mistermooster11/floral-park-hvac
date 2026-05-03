@@ -5,11 +5,11 @@ import { useInView } from "framer-motion";
 
 const testimonials = [
   {
-    id: "daniel-pipitone",
+    id: "nassau-homeowner-1",
     quote:
-      "Professional service with a very fair price. They send you info about the assigned technician in advance and showed up exactly on time. They cleaned up nicely after snaking a drain line on the 2nd floor of a 3 story building. Forget Roto Rooter — Pipe Monkeys will be my new go-to for plumbing needs.",
-    name: "Daniel Pipitone",
-    position: "Brooklyn Homeowner",
+      "Floral Park HVAC is a company that was great from scheduling an appointment to completion of inspection and analysis of issues. I cannot say enough about their service and professionalism. They were very understanding and caring throughout the whole process.",
+    name: "Verified Customer",
+    position: "Nassau County Homeowner",
     platform: "Google Review ★★★★★",
   },
 ];

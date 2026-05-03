@@ -13,19 +13,19 @@ const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
             <div className="inner inner-header flex flex-row items-center justify-between min-h-[4.4rem] p-0">
 
                 {/* Mobile logo */}
-                <Link href="/" className="block lg:hidden float-left" aria-label="Pipe Monkeys">
-                    {/* [TODO: Replace with Pipe Monkeys logo SVG] */}
-                    <img src="/logos/logo-94.svg" alt="Pipe Monkeys" className="block h-[3.6rem]" />
+                <Link href="/" className="block lg:hidden float-left" aria-label="Floral Park HVAC">
+                    {/* [TODO: Replace with Floral Park HVAC logo SVG] */}
+                    <img src="/logos/logo-94.svg" alt="Floral Park HVAC" className="block h-[3.6rem]" />
                 </Link>
 
                 {/* Left: phone number — desktop only */}
                 <div className="header__left hidden lg:block">
                     <a
-                        href="tel:7187491830"
+                        href="tel:5168554328"
                         className="flex items-center gap-2 text-brand-sky text-[1.4rem] font-light tracking-[.05rem] py-[2rem] no-underline transition-colors duration-[350ms] hover:text-[#daedf5]"
                     >
                         <Phone size={14} strokeWidth={2} />
-                        <span>(718) 749-1830 — Same-Day Service Available</span>
+                        <span>(516) 855-4328 — Mon–Fri 7am–5pm &bull; Sat 7am–1pm</span>
                     </a>
                 </div>
 

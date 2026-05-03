@@ -12,8 +12,7 @@ const quickLinks = [
 ];
 
 const socials = [
-  { icon: "icon-facebook",   href: "https://www.facebook.com/pipemonkeys",  label: "Facebook"  },
-  { icon: "icon-instagram",  href: "https://www.instagram.com/pipemonkeys", label: "Instagram" },
+  { icon: "icon-facebook", href: "https://www.facebook.com/floralparkhvac/", label: "Facebook" },
 ];
 
 export default function Footer() {
@@ -30,11 +29,11 @@ export default function Footer() {
         {/* Logo */}
         <div className={`footer__logo fadeInUpS wow${vis}`}>
           <a href="/">
-            <span className="sr-only">Pipe Monkeys</span>
-            {/* [TODO: Replace with Pipe Monkeys logo] */}
+            <span className="sr-only">Floral Park HVAC</span>
+            {/* [TODO: Replace with Floral Park HVAC logo] */}
             <img
               src="/logos/logo-long.svg"
-              alt="Pipe Monkeys Drain & Sewer"
+              alt="Floral Park HVAC"
               width="220"
               height="48"
             />
@@ -66,14 +65,13 @@ export default function Footer() {
             <h3 className="footer__heading">Contact Us</h3>
             <div className="content-entry">
               <p>
-                <strong>(718) 749-1830</strong><br />
-                Brooklyn, Queens &amp; Nassau County<br />
-                {/* [TODO: Add business hours] */}
-                Mon–Sat: 7am–8pm &bull; Sun: Emergency Only
+                <strong>(516) 855-4328</strong><br />
+                7 Florence St, Floral Park, NY 11001<br />
+                Mon–Fri: 7am–5pm &bull; Sat: 7am–1pm
               </p>
             </div>
             <a
-              href="tel:7187491830"
+              href="tel:5168554328"
               className={`ia-link ia-link--arrow ia-link--white wow${vis}`}
             >
               <i className="icon-arrow-right ia-orange" />
@@ -89,9 +87,9 @@ export default function Footer() {
             <h3 className="footer__heading">Service Areas</h3>
             <div className="content-entry">
               <p>
-                Brooklyn &bull; Queens &bull; Nassau County<br />
-                All neighborhoods — if you&apos;re not sure,
-                just call. We almost certainly cover your area.
+                All Nassau County &bull; Western Suffolk<br />
+                Northern Queens, NY<br />
+                Not sure if we cover your area? Just call.
               </p>
             </div>
             <a
@@ -111,7 +109,7 @@ export default function Footer() {
         <div className={`footer__bottom cleared fadeInUpS wow${vis}`}>
 
           <div className="footer__bottom__left">
-            &copy;2026 Pipe Monkeys. All rights reserved.
+            &copy;{new Date().getFullYear()} Floral Park HVAC Corp. All rights reserved.
           </div>
 
           <div className="footer__bottom__center">

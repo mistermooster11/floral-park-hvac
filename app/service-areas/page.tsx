@@ -7,46 +7,46 @@ import { useInView } from "framer-motion";
 
 const areas = [
   {
-    slug: "brooklyn",
-    region: "Brooklyn",
-    headline: "Drain & Sewer Specialists in Brooklyn",
-    description:
-      "Brooklyn has some of the oldest plumbing infrastructure in New York — pre-war pipe systems, clay drain lines in brownstones, and cast iron stacks in walk-ups that have been running for 80+ years. Our techs know exactly what to expect when they pull up to a building in Park Slope vs. Bay Ridge, and they arrive with the right equipment the first time.",
-    callouts: [
-      "Brownstone & pre-war walk-up specialists",
-      "Stack drain issues in multi-family buildings",
-      "Same-day service, all neighborhoods",
-    ],
-    neighborhoods:
-      "Williamsburg • Greenpoint • Bushwick • Bed-Stuy • Crown Heights • Park Slope • Sunset Park • Bay Ridge • Bensonhurst • Dyker Heights • Gravesend • Sheepshead Bay • Coney Island • Flatbush • Canarsie • East New York & More",
-  },
-  {
-    slug: "queens",
-    region: "Queens",
-    headline: "Drain & Sewer Specialists in Queens",
-    description:
-      "Queens covers one of the widest mixes of home types in the entire city — from single-family houses in Whitestone and Bayside to dense apartment buildings in Astoria and Flushing. Our team handles everything from slow kitchen drains in a LIC condo to main line backups in a multi-unit Jackson Heights walk-up.",
-    callouts: [
-      "Single-family homes to large apartment buildings",
-      "Grease line clearing for restaurants & commercial kitchens",
-      "Emergency same-day response across all of Queens",
-    ],
-    neighborhoods:
-      "Astoria • LIC • Maspeth • Flushing • Whitestone • Bayside • Forest Hills • Rego Park • Jackson Heights • Elmhurst • Middle Village • Ridgewood • Woodside • Sunnyside • Jamaica • Howard Beach & More",
-  },
-  {
     slug: "nassau-county",
     region: "Nassau County",
-    headline: "Drain & Sewer Specialists in Nassau County",
+    headline: "HVAC Service Throughout Nassau County",
     description:
-      "Nassau County homes sit on longer sewer runs than most NYC properties, and mature tree root systems along those lines are one of the leading causes of main line backups. Our technicians understand how Nassau systems are laid out, where clogs typically form, and how to clear them without damaging the pipe.",
+      "Nassau County is our home turf. We know the housing stock — from post-war Cape Cods in Levittown to larger homes in Garden City and Syosset — and we understand the HVAC demands that come with Long Island summers and cold winters. Whether your central AC failed in a heat wave or your boiler went out in January, we respond fast and fix it right.",
     callouts: [
-      "Root intrusion specialists for Nassau main lines",
-      "Hydro jetting for long sewer runs",
-      "Local techs — not dispatched from far away",
+      "Full county coverage — all Nassau towns and villages",
+      "Emergency service available — call and we'll get there",
+      "Licensed Nassau County contractor, fully insured",
     ],
     neighborhoods:
-      "Valley Stream • Elmont • Franklin Square • West Hempstead • Hempstead • Garden City • Mineola • New Hyde Park • Floral Park • Rockville Centre • Oceanside • Baldwin • Freeport • Merrick • Bellmore • Wantagh • Seaford • Massapequa • Levittown • East Meadow • Uniondale • Lynbrook • Malverne • Hewlett & More",
+      "Floral Park • New Hyde Park • Garden City • Mineola • Elmont • Valley Stream • Franklin Square • Hempstead • West Hempstead • Rockville Centre • Oceanside • Baldwin • Freeport • Merrick • Bellmore • Wantagh • Seaford • Massapequa • Levittown • East Meadow • Hicksville • Syosset • Uniondale • Lynbrook • Malverne • Hewlett & More",
+  },
+  {
+    slug: "western-suffolk",
+    region: "Western Suffolk County",
+    headline: "Heating & Cooling Service in Western Suffolk",
+    description:
+      "We extend our service into the Western Suffolk communities along the South Shore and the LIE corridor. Same licensed technicians, same upfront pricing, same fast scheduling — just a little further east. If you're in Western Suffolk and need HVAC service, call us first.",
+    callouts: [
+      "Oil and gas heating specialists — common in Suffolk",
+      "AC installs and replacements for all home sizes",
+      "Same-day scheduling available in most areas",
+    ],
+    neighborhoods:
+      "Brentwood • Bay Shore • Deer Park • North Babylon • West Babylon • Lindenhurst • Amityville • Copiague • Wyandanch & Surrounding Areas",
+  },
+  {
+    slug: "northern-queens",
+    region: "Northern Queens",
+    headline: "HVAC Service in Northern Queens",
+    description:
+      "Our service area crosses into Northern Queens — the communities that border Nassau County and the neighborhoods further into the borough. We handle residential HVAC service for single-family homes, multi-family buildings, and everything in between across this part of Queens.",
+    callouts: [
+      "Central AC and heating service for all home types",
+      "Mini split installs in buildings without ductwork",
+      "Fast response from nearby Nassau County dispatch",
+    ],
+    neighborhoods:
+      "Floral Park (Queens) • Queens Village • Bellerose • Hollis • Jamaica • Glen Oaks • Little Neck • Bayside • Douglaston • Springfield Gardens & Surrounding Neighborhoods",
   },
 ];
 
@@ -82,8 +82,8 @@ function AreaSection({ area, reversed }: { area: typeof areas[number]; reversed:
               <strong>Neighborhoods served:</strong> {area.neighborhoods}
             </p>
             <p>
-              Not sure if we cover your street?{" "}
-              <a href="tel:7187491830" className="ia-link">Call (718) 749-1830</a>{" "}
+              Not sure if we cover your address?{" "}
+              <a href="tel:5168554328" className="ia-link">Call (516) 855-4328</a>{" "}
               — we almost certainly do.
             </p>
           </div>
@@ -127,9 +127,10 @@ export default function ServiceAreasPage() {
               <div className={`sub-heading fadeInUpS wow${heroVis}`}>Coverage Area</div>
               <div className={`content-entry fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
                 <p>
-                  Pipe Monkeys serves all of Brooklyn, Queens, and Nassau County. We don&apos;t
-                  subcontract — our own techs cover every neighborhood, every day, seven days a week.
-                  Same-day scheduling is available across our entire service area.
+                  Floral Park HVAC serves all of Nassau County, Western Suffolk, and
+                  Northern Queens. We dispatch our own licensed technicians — not
+                  subcontractors — across the entire service area. Same-day scheduling
+                  available. Mon–Fri 7am–5pm &amp; Sat 7am–1pm.
                 </p>
               </div>
             </div>
@@ -148,9 +149,9 @@ export default function ServiceAreasPage() {
                   </li>
                 ))}
                 <li className={`fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.4s" }}>
-                  <a className="ia-link ia-link--arrow" href="tel:7187491830">
+                  <a className="ia-link ia-link--arrow" href="tel:5168554328">
                     <i className="icon-link" />
-                    <span>Call (718) 749-1830</span>
+                    <span>Call (516) 855-4328</span>
                   </a>
                 </li>
               </ul>
@@ -179,14 +180,15 @@ export default function ServiceAreasPage() {
           <div className={`front-donation__in wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
             <div className="content-entry">
               <p>
-                Our dispatch is fast and our coverage is wide. Call <strong>(718) 749-1830</strong> and
-                we&apos;ll confirm in 30 seconds and get you on the schedule the same day.
+                Our dispatch is fast and our coverage is wide. Call{" "}
+                <strong>(516) 855-4328</strong> and we&apos;ll confirm in 30 seconds
+                and get you on the schedule.
               </p>
             </div>
             <div className="front-donation__btn-wrap">
               <div className="front-donation__btn">
-                <a className="btn btn--primary" href="tel:7187491830">
-                  Call (718) 749-1830
+                <a className="btn btn--primary" href="tel:5168554328">
+                  Call (516) 855-4328
                 </a>
               </div>
             </div>

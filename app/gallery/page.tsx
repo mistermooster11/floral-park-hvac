@@ -8,58 +8,57 @@ import { useInView } from "framer-motion";
 const galleryItems = [
   {
     id: "gallery-1",
-    label: "Main Sewer Line — Crown Heights, Brooklyn",
-    beforeAlt: "Blocked main sewer line before clearing",
-    afterAlt:  "Clear main sewer line after hydro jetting",
-    // [TODO: Replace placeholder URLs with real before/after photos]
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Main Sewer Line",
+    label: "Central AC Install — Floral Park, Nassau County",
+    beforeAlt: "Old AC condenser before replacement",
+    afterAlt:  "New Carrier AC condenser after installation",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "AC Installation",
   },
   {
     id: "gallery-2",
-    label: "Kitchen Drain — Astoria, Queens",
-    beforeAlt: "Grease-clogged kitchen drain before clearing",
-    afterAlt:  "Kitchen drain fully cleared and flowing",
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Kitchen Sink",
+    label: "Boiler Replacement — New Hyde Park",
+    beforeAlt: "Old boiler removed prior to replacement",
+    afterAlt:  "New Burnham boiler fully installed",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "Boiler",
   },
   {
     id: "gallery-3",
-    label: "Hydro Jetting — Nassau County Home",
-    beforeAlt: "Pipe interior with grease buildup",
-    afterAlt:  "Clean pipe interior after hydro jetting",
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Hydro Jetting",
+    label: "Air Handler & Duct Work — Nassau County",
+    beforeAlt: "Old air handler and ductwork before service",
+    afterAlt:  "New air handler installation with updated duct runs",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "Air Handler",
   },
   {
     id: "gallery-4",
-    label: "Tub Drain — Bay Ridge, Brooklyn",
-    beforeAlt: "Hair-clogged tub drain before clearing",
-    afterAlt:  "Tub drain cleared with no damage to tile",
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Tub & Shower",
+    label: "Mini Split Install — Finished Basement",
+    beforeAlt: "Unfinished space before mini split install",
+    afterAlt:  "Wall-mounted mini split system installed and running",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "Mini Split",
   },
   {
     id: "gallery-5",
-    label: "Camera Inspection — Multi-Unit, Flushing",
-    beforeAlt: "Camera view showing root intrusion in sewer line",
-    afterAlt:  "Cleared line confirmed via camera after service",
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Camera Inspection",
+    label: "Full System Swap — Western Suffolk",
+    beforeAlt: "Aging HVAC system before full replacement",
+    afterAlt:  "Complete new HVAC system installed and operational",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "System Replacement",
   },
   {
     id: "gallery-6",
-    label: "Toilet Clog — Levittown, Nassau",
-    beforeAlt: "Overflowing toilet before service",
-    afterAlt:  "Toilet fully cleared and flushing cleanly",
-    before: "https://pipemonkeys.com/",
-    after:  "https://pipemonkeys.com/",
-    category: "Toilet",
+    label: "Water Heater Replacement — Queens Village",
+    beforeAlt: "Old water heater prior to removal",
+    afterAlt:  "New water heater installed and ready",
+    before: "https://www.floralparkhvac.com/",
+    after:  "https://www.floralparkhvac.com/",
+    category: "Water Heater",
   },
 ];
 
@@ -165,9 +164,9 @@ export default function GalleryPage() {
               <div className={`sub-heading fadeInUpS wow${heroVis}`}>Real Results</div>
               <div className={`content-entry fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
                 <p>
-                  Every job below was done by a Pipe Monkeys tech in Brooklyn, Queens, or Nassau
-                  County. These are real lines, real homes, and real results — no stock photos.
-                  {/* [TODO: Replace placeholder images with actual job photos from client] */}
+                  Real HVAC jobs done by Floral Park HVAC techs across Nassau County,
+                  Western Suffolk, and Northern Queens.
+                  {/* [TODO: Replace all placeholder images with actual job photos from client] */}
                 </p>
               </div>
             </div>
@@ -178,9 +177,9 @@ export default function GalleryPage() {
               </div>
               <ul className="quick-links" role="list">
                 <li className={`fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
-                  <a className="ia-link ia-link--arrow" href="tel:7187491830">
+                  <a className="ia-link ia-link--arrow" href="tel:5168554328">
                     <i className="icon-link" />
-                    <span>Call (718) 749-1830</span>
+                    <span>Call (516) 855-4328</span>
                   </a>
                 </li>
                 <li className={`fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.2s" }}>
@@ -218,8 +217,8 @@ export default function GalleryPage() {
             style={{ animationDelay: "0.2s" }}
           >
             <p>
-              Scroll through clogs we&apos;ve cleared across the area. From grease-packed kitchen
-              lines to root-choked main sewers — we document our work and stand behind every job.
+              From AC installs to full system replacements — we document our work
+              and stand behind every job we complete.
             </p>
           </div>
           <div className="user-grid-list user-grid-list--small">
@@ -237,22 +236,23 @@ export default function GalleryPage() {
       >
         <div className="inner inner--slim-1172">
           <div className={`sub-heading wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.1s" }}>
-            Ready to Clear Your Drain?
+            Want Results Like These?
           </div>
           <h2 className={`h2 wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
-            Same-Day Service Available
+            Call Us for a Free Estimate
           </h2>
           <div className={`front-donation__in wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
             <div className="content-entry">
               <p>
-                Call <strong>(718) 749-1830</strong> — we&apos;ll give you an honest price
-                before we start, and we won&apos;t leave until the job is done right.
+                Call <strong>(516) 855-4328</strong> — we&apos;ll give you an
+                honest price before we start, and we won&apos;t leave until
+                the job is done right.
               </p>
             </div>
             <div className="front-donation__btn-wrap">
               <div className="front-donation__btn">
-                <a className="btn btn--primary" href="tel:7187491830">
-                  Call (718) 749-1830
+                <a className="btn btn--primary" href="tel:5168554328">
+                  Call (516) 855-4328
                 </a>
               </div>
             </div>

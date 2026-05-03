@@ -7,58 +7,58 @@ import { useInView } from "framer-motion";
 
 const posts = [
   {
-    id: "why-drains-keep-clogging",
-    title: "Why Your Drain Keeps Clogging (And What Actually Fixes It)",
+    id: "ac-running-not-cooling",
+    title: "Why Your AC Is Running But Not Cooling: 5 Common Causes",
     excerpt:
-      "Snaking the same drain every few months? The problem usually isn't the clog — it's grease or mineral buildup on the pipe walls. Here's when to snake and when to jet.",
-    category: "Drain Tips",
+      "Your air conditioner is on, the fan is blowing — but the house isn't getting cool. Before you call for a repair, here's what our Nassau County techs check first.",
+    category: "AC Tips",
+    date: "May 2026",
+    href: "/blog/ac-running-not-cooling",
+  },
+  {
+    id: "repair-or-replace-hvac",
+    title: "Should You Repair or Replace Your HVAC System? The Honest Answer",
+    excerpt:
+      "There's no one-size-fits-all answer, but there is a simple framework. Age, repair cost, and efficiency are the three factors that matter most.",
+    category: "Homeowner Guide",
     date: "April 2026",
-    href: "/blog/why-drains-keep-clogging",
+    href: "/blog/repair-or-replace-hvac",
   },
   {
-    id: "hydro-jetting-vs-snaking",
-    title: "Hydro Jetting vs. Drain Snaking: Which One Do You Actually Need?",
+    id: "long-island-summer-hvac-prep",
+    title: "Getting Your AC Ready for Long Island Summer: What to Do in Spring",
     excerpt:
-      "Both tools clear clogs — but they work very differently. We break down the honest answer for homeowners who don't want to overpay or get upsold.",
-    category: "How It Works",
+      "Nassau County summers hit hard. Here's the exact tune-up checklist our techs use before the hot season — and why booking in April beats waiting until June.",
+    category: "Seasonal Tips",
     date: "March 2026",
-    href: "/blog/hydro-jetting-vs-snaking",
+    href: "/blog/long-island-summer-hvac-prep",
   },
   {
-    id: "main-line-warning-signs",
-    title: "5 Warning Signs Your Main Sewer Line Is About to Back Up",
+    id: "boiler-vs-furnace-long-island",
+    title: "Boiler vs. Furnace: What's in Your Long Island Home and Why It Matters",
     excerpt:
-      "Multiple slow drains, gurgling toilets, foul smells near floor drains — these aren't random. They're your plumbing system telling you something's wrong downstream.",
+      "Many Nassau County homes were built with boilers, while newer construction uses forced-air furnaces. Here's how to tell what you have and what service each system needs.",
     category: "Homeowner Guide",
     date: "February 2026",
-    href: "/blog/main-line-warning-signs",
+    href: "/blog/boiler-vs-furnace-long-island",
   },
   {
-    id: "brooklyn-old-pipes",
-    title: "Brooklyn's Old Pipes: What Every Brownstone Owner Needs to Know",
+    id: "how-often-air-filter",
+    title: "How Often Should You Change Your Air Filter? (And Which Kind to Buy)",
     excerpt:
-      "Pre-war buildings in Brooklyn often have clay, cast iron, or even Orangeburg pipe. We explain what that means for your drains and how to stay ahead of blockages.",
-    category: "Local Guide",
+      "It sounds simple, but most homeowners are either changing their filter too often or not often enough. Our answer depends on your system and home.",
+    category: "Maintenance Tips",
     date: "January 2026",
-    href: "/blog/brooklyn-old-pipes",
+    href: "/blog/how-often-air-filter",
   },
   {
-    id: "what-not-to-flush",
-    title: "What Not to Flush or Pour Down the Drain (The Real List)",
+    id: "oil-heating-nassau-county",
+    title: "Oil Heating in Nassau County: What Homeowners Need to Know in 2026",
     excerpt:
-      "Flushable wipes aren't actually flushable. Grease hardens in your pipes. Here's what Pipe Monkeys techs pull out of clogged lines every single day.",
-    category: "Drain Tips",
+      "Oil heat is still common across Long Island. We break down maintenance expectations, common failure points, and when an oil system is worth keeping vs. converting.",
+    category: "Heating",
     date: "December 2025",
-    href: "/blog/what-not-to-flush",
-  },
-  {
-    id: "camera-inspection-worth-it",
-    title: "Is a Drain Camera Inspection Worth It? Honest Answer from a Tech",
-    excerpt:
-      "You don't need a camera for a simple kitchen clog. But for recurring main line issues? A camera can save you thousands. Here's when we recommend it and why.",
-    category: "How It Works",
-    date: "November 2025",
-    href: "/blog/camera-inspection-worth-it",
+    href: "/blog/oil-heating-nassau-county",
   },
 ];
 
@@ -91,7 +91,7 @@ function PostCard({ post, delay }: { post: typeof posts[number]; delay: string }
           <span className="p3 ia-dark" style={{ fontSize: "1.2rem", opacity: 0.6 }}>{post.date}</span>
         </div>
         <h3 className="h6 ia-margin-1">
-          {/* [TODO: Enable when blog CMS is wired up] */}
+          {/* [TODO: Replace with real content — these are placeholder article titles] */}
           {post.title}
         </h3>
         <p className="p3 ia-regular ia-dark" style={{ marginBottom: "1.2rem" }}>
@@ -101,7 +101,7 @@ function PostCard({ post, delay }: { post: typeof posts[number]; delay: string }
           <i className="icon-link" />
           <span>Read More</span>
         </a>
-        {/* [TODO: Wire each href to real blog post pages] */}
+        {/* [TODO: Wire each href to real blog post pages when content is written] */}
       </div>
     </div>
   );
@@ -132,7 +132,7 @@ export default function BlogPage() {
               <span className="post post-page current-item">Blog</span>
             </div>
             <h1 className={`ia-white ia-margin-0 fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
-              Drain Tips & Homeowner Guides
+              HVAC Tips &amp; Homeowner Guides
             </h1>
           </div>
         </div>
@@ -140,12 +140,12 @@ export default function BlogPage() {
         <div className="hero-org__bottom flex-module">
           <div className="inner inner--slim-1172 cleared">
             <div className={`hero-org__left wow${heroVis}`}>
-              <div className={`sub-heading fadeInUpS wow${heroVis}`}>From the Pipe Monkeys Team</div>
+              <div className={`sub-heading fadeInUpS wow${heroVis}`}>From the Floral Park HVAC Team</div>
               <div className={`content-entry fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.1s" }}>
                 <p>
-                  Practical advice from the techs who clear drains in Brooklyn, Queens, and Nassau
-                  County every single day. No fluff — just the honest information homeowners
-                  and building managers actually need.
+                  Practical advice from technicians who work on HVAC systems across
+                  Nassau County, Western Suffolk, and Northern Queens every day.
+                  No filler — just the honest information homeowners actually need.
                 </p>
               </div>
             </div>
@@ -168,9 +168,9 @@ export default function BlogPage() {
                   </a>
                 </li>
                 <li className={`fadeInUpS wow${heroVis}`} style={{ animationDelay: "0.3s" }}>
-                  <a className="ia-link ia-link--arrow" href="tel:7187491830">
+                  <a className="ia-link ia-link--arrow" href="tel:5168554328">
                     <i className="icon-link" />
-                    <span>Call (718) 749-1830</span>
+                    <span>Call (516) 855-4328</span>
                   </a>
                 </li>
               </ul>
@@ -191,7 +191,7 @@ export default function BlogPage() {
           >
             Latest Articles
           </h2>
-          {/* [TODO: Replace placeholder posts with real content from client or CMS] */}
+          {/* [TODO: Replace placeholder posts with real content or connect a CMS] */}
           <div className="user-grid-list user-grid-list--small">
             {posts.map((post, i) => (
               <PostCard key={post.id} post={post} delay={`${(i % 3) * 0.1}s`} />
@@ -207,22 +207,23 @@ export default function BlogPage() {
       >
         <div className="inner inner--slim-1172">
           <div className={`sub-heading wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.1s" }}>
-            Have a Drain Emergency?
+            Have an HVAC Issue Right Now?
           </div>
           <h2 className={`h2 wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
-            Don&apos;t Wait — We Pick Up Fast
+            We Pick Up Fast — Call Us
           </h2>
           <div className={`front-donation__in wow fadeInUpS${ctaInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
             <div className="content-entry">
               <p>
-                Call <strong>(718) 749-1830</strong> and we&apos;ll give you an ETA on the spot.
-                Same-day service available seven days a week across Brooklyn, Queens, and Nassau County.
+                Call <strong>(516) 855-4328</strong> and we&apos;ll give you an
+                honest assessment and schedule you fast. Mon–Fri 7am–5pm &amp;
+                Sat 7am–1pm across Nassau County, Western Suffolk, and Northern Queens.
               </p>
             </div>
             <div className="front-donation__btn-wrap">
               <div className="front-donation__btn">
-                <a className="btn btn--primary" href="tel:7187491830">
-                  Call (718) 749-1830
+                <a className="btn btn--primary" href="tel:5168554328">
+                  Call (516) 855-4328
                 </a>
               </div>
             </div>

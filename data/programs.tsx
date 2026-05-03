@@ -34,17 +34,17 @@ export type ProgramsPageData = {
 export const programsData: ProgramsPageData = {
   navItems: [
     { href: "#flex-module-3", label: "Service Details" },
-    { href: "#flex-module-4", label: "Service Areas"  },
+    { href: "#flex-module-4", label: "Service Areas"   },
   ],
 
   hero: {
-    bgImage: "https://pipemonkeys.com/",
+    bgImage: "https://www.floralparkhvac.com/",
     title: "Our Services",
     description: (
       <p>
-        Pipe Monkeys handles every type of drain and sewer issue across
-        Brooklyn, Queens, and Nassau County — from a slow kitchen sink to a
-        fully blocked main line.
+        Floral Park HVAC handles every heating and cooling need across Nassau
+        County, Western Suffolk, and Northern Queens — from emergency repairs to
+        full system replacements.
       </p>
     ),
     breadcrumbParentLabel: "Services",
@@ -55,17 +55,16 @@ export const programsData: ProgramsPageData = {
     content: (
       <>
         <p>
-          Every job starts the same way: we diagnose the problem, explain the
-          solution in plain language, and give you the price before any work
-          begins. Our techs carry professional-grade cutters, snakes, augers,
-          and hydro-jetting equipment — so whatever the line throws at us,
-          we&rsquo;re ready.
+          We assess your system, explain exactly what&rsquo;s needed, and give
+          you the price before any work begins. Our technicians carry the parts
+          and equipment to handle most repairs in a single visit — no repeat trips,
+          no waiting around.
         </p>
         <p>
-          We work in residential homes, brownstones, pre-war walk-ups, condos,
-          and multi-family buildings. Same-day scheduling available. Near-instant
-          response for emergencies. Call{" "}
-          <a href="tel:7187491830">(718) 749-1830</a> to get started.
+          We service all major brands including American Standard, Comfortmaker,
+          Burnham, and more. Residential service, Mon–Fri 7am–5pm &amp; Sat
+          7am–1pm. Call{" "}
+          <a href="tel:5168554328">(516) 855-4328</a> for fast scheduling.
         </p>
       </>
     ),
@@ -76,101 +75,123 @@ export const programsData: ProgramsPageData = {
 
   programs: [
     {
-      title: "Main Sewer Line Clearing",
+      title: "Central Air Conditioning",
       content: (
         <p>
-          Roots, scale, grease buildup, and heavy blockages in the main line
-          require pro-level equipment — not a standard snake from the hardware
-          store. Our techs use industrial cutters and jetting to restore full
-          flow to your main sewer line and confirm it before leaving. We handle
-          this every day in Brooklyn brownstones, Queens multi-families, and
-          Nassau County homes with long sewer runs.
+          Whether your AC is running but not cooling, making unusual noise, or
+          has stopped entirely, we diagnose the problem at the source and fix it
+          right. We install Carrier condensers and other top-brand central AC
+          units, and we service all major makes already in your home. Most repairs
+          are completed same visit with parts on the truck.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/main-sewer-lines",
+      learnMoreHref: "/craft-catalog/central-air-conditioning",
     },
     {
-      title: "Kitchen Sink Drain Clearing",
+      title: "Mini Split Systems",
       content: (
         <p>
-          Grease, food debris, and soap scum are the most common kitchen culprits
-          — and they build up fast in NYC buildings with heavy daily use. We
-          clear kitchen drains using professional cutters and hydro jetting
-          depending on the severity, leaving the line fully open and grease-free.
-          No mess, no damage to pipes, and no recurring clogs if you go with
-          jetting.
+          Mini splits are ideal for rooms without ductwork, additions, garages,
+          and finished basements. We install and service ductless mini split
+          systems from leading manufacturers, sizing each unit correctly for the
+          space so you get maximum efficiency and even temperature control without
+          over- or under-sizing.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/kitchen-sinks",
+      learnMoreHref: "/craft-catalog/mini-split-systems",
     },
     {
-      title: "Tub & Shower Drain Clearing",
+      title: "A/C Tune-Up & Maintenance Plans",
       content: (
         <p>
-          Hair, soap buildup, and mineral deposits accumulate silently until
-          you&rsquo;re standing in ankle-deep water. Our techs remove the
-          blockage cleanly — no torn-up tile, no chemical damage to pipes — and
-          leave the bathroom exactly as they found it. Shoe covers and drop
-          cloths every time.
+          A seasonal tune-up catches small problems before they become expensive
+          emergencies mid-summer. We check refrigerant levels, clean coils,
+          inspect electrical connections, and test the full system on the
+          manufacturer&rsquo;s checklist. Book early in the season for more
+          scheduling flexibility — slots fill fast once the heat hits.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/tubs-and-showers",
+      learnMoreHref: "/craft-catalog/ac-maintenance",
     },
     {
-      title: "Toilet Clog Clearing",
+      title: "Gas Heating",
       content: (
         <p>
-          Stubborn toilet clogs — including foreign objects, excessive paper,
-          and hard-to-reach blockages — are cleared fast with the right auger
-          and technique. We&rsquo;ve retrieved everything from children&rsquo;s
-          toys to full pipe obstructions. No splash, no stress, and we test the
-          flush before we leave.
+          We install, service, and repair gas furnaces and gas heating systems
+          throughout Nassau County and Queens. If your heat failed overnight or
+          your furnace is short-cycling, our techs diagnose quickly and carry
+          common parts. We also offer annual gas heating tune-ups to keep the
+          system running efficiently all winter.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/toilets",
+      learnMoreHref: "/craft-catalog/gas-heating",
     },
     {
-      title: "Hydro Jetting",
+      title: "Oil Heating",
       content: (
         <p>
-          Snaking clears a path through the clog. Hydro jetting actually scrubs
-          grease, scale, and buildup off the pipe walls — giving you a like-new
-          interior and dramatically reducing repeat clogs. If you&rsquo;ve been
-          dealing with the same drain backing up every few months, jetting is
-          the long-term fix. Available for kitchen lines, main sewer lines, and
-          commercial buildings.
+          Oil heating is still common across Nassau County and Long Island, and
+          we know these systems well. We service oil furnaces and boilers,
+          diagnose burner failures, and offer annual oil heating maintenance
+          plans to prevent the breakdowns that always seem to happen on the
+          coldest nights of the year.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/hydro-jetting",
+      learnMoreHref: "/craft-catalog/oil-heating",
     },
     {
-      title: "Camera Inspection",
+      title: "Boilers",
       content: (
         <p>
-          Before we recommend a repair or jetting service on your main line, we
-          can run a camera to show you exactly what&rsquo;s in there — root
-          intrusion, pipe damage, grease buildup, or collapsed sections. You see
-          what we see, in real time, so there&rsquo;s no guesswork and no
-          upselling on work you don&rsquo;t need.
+          We install, replace, and service boilers for residential homes across
+          Floral Park and the surrounding communities. From a no-heat call in
+          January to a planned upgrade from an aging unit, our Burnham-authorized
+          techs handle the full scope — including removal of the old system and
+          full installation of the new one.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/camera-inspection",
+      learnMoreHref: "/craft-catalog/boilers",
     },
     {
-      title: "Multi-Unit & Commercial Buildings",
+      title: "Water Heaters",
       content: (
         <p>
-          We work with brownstones, pre-war walk-ups, condos, co-ops, and
-          multi-family buildings across Brooklyn and Queens every single day.
-          Stack drain issues, shared main lines, and building-wide backups are
-          all in our wheelhouse. We coordinate with building managers and
-          minimize disruption to tenants throughout the job.
+          No hot water is an immediate problem. We install and replace water
+          heaters fast, with upfront pricing so you know the full cost before we
+          start. We work with standard tank units and can advise on tankless
+          options if you&rsquo;re looking to save space or reduce energy costs
+          long-term.
         </p>
       ),
-      learnMoreHref: "/craft-catalog/multi-unit-buildings",
+      learnMoreHref: "/craft-catalog/water-heaters",
+    },
+    {
+      title: "Air Handlers & Duct Work",
+      content: (
+        <p>
+          The air handler and ductwork are what move conditioned air through your
+          home — and when they&rsquo;re undersized, leaking, or improperly
+          installed, no amount of equipment upgrades will fix your comfort
+          problems. We install air handlers alongside new AC and heating systems,
+          and we repair or replace duct runs that are losing efficiency.
+        </p>
+      ),
+      learnMoreHref: "/craft-catalog/air-handlers-duct-work",
+    },
+    {
+      title: "Full System Replacements",
+      content: (
+        <p>
+          When a repair no longer makes financial sense, we handle full system
+          swaps — out with the old, in with properly sized, modern equipment.
+          We provide customized proposals matched to your home&rsquo;s square
+          footage, layout, and budget. No oversizing to inflate the ticket, no
+          undersizing to cut corners. The right equipment the first time.
+        </p>
+      ),
+      learnMoreHref: "/craft-catalog/system-replacements",
     },
   ],
 
-  // No external partners — use service area neighborhoods instead
   partners: [],
 };

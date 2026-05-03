@@ -12,14 +12,13 @@ interface FaqItem {
 
 const faqItems: FaqItem[] = [
   {
-    title: "How quickly can you get here?",
+    title: "How quickly can you come out?",
     content: (
       <p>
-        Most calls are scheduled the same day, and we offer near-instant
-        response for urgent clogs. Timing depends on your exact neighborhood,
-        but we move fast. Call us at{" "}
-        <a href="tel:7187491830" className="ia-link">(718) 749-1830</a>{" "}
-        and we&apos;ll give you an accurate ETA on the spot.
+        We schedule most service calls the same day or next day. Call us at{" "}
+        <a href="tel:5168554328" className="ia-link">(516) 855-4328</a>{" "}
+        and we&apos;ll give you an accurate appointment time right away. Business
+        hours are Monday–Friday 7am–5pm and Saturday 7am–1pm.
       </p>
     ),
   },
@@ -27,43 +26,46 @@ const faqItems: FaqItem[] = [
     title: "Do you give upfront pricing?",
     content: (
       <p>
-        Always. We diagnose the issue, explain the solution, and give you the
-        price before any work starts. No surprises, no upsell games. What we
-        quote is what you pay — period.
+        Always. We assess your system, explain exactly what&apos;s needed, and
+        give you the full price before any work starts. No surprise charges, no
+        hourly mysteries — what we quote is what you pay. That&apos;s how we&apos;ve
+        operated since day one.
       </p>
     ),
   },
   {
-    title: "What tools do you use to clear drains?",
+    title: "Should I repair or replace my HVAC system?",
     content: (
       <p>
-        We carry professional cutters, snakes, augers, and hydro-jetting
-        equipment on every truck. Your tech will choose the safest and most
-        effective method for your specific line and problem — and explain why
-        before starting.
+        A good rule of thumb: if your system is under 10 years old and the repair
+        cost is less than half the price of a replacement, repair usually makes
+        more financial sense. If it&apos;s older or the same issue keeps coming
+        back, a new system often pays for itself in energy savings and reliability.
+        We&apos;ll give you an honest breakdown — not a push toward the more
+        expensive option.
       </p>
     ),
   },
   {
-    title: "When should I consider hydro jetting instead of snaking?",
+    title: "What brands do you service?",
     content: (
       <p>
-        Snaking clears a path through the clog. Jetting actually scrubs grease,
-        scale, and buildup off the pipe walls — giving you a cleaner line and
-        much longer-lasting results. If you get repeat clogs in the same drain,
-        jetting is usually the right call. We&apos;ll tell you honestly which
-        one makes sense for your situation.
+        We service all major brands including American Standard, Comfortmaker,
+        Burnham, Carrier, Trane, Lennox, Rheem, Goodman, and Bryant. We also
+        install American Standard, Comfortmaker, and Burnham equipment on new
+        installs and replacements. If you&apos;re unsure whether we work on your
+        brand, just call — we almost certainly do.
       </p>
     ),
   },
   {
-    title: "Do you service apartments and multi-unit buildings?",
+    title: "Are you licensed and insured?",
     content: (
       <p>
-        All the time. We work with brownstones, pre-war buildings, walk-ups,
-        condos, co-ops, and multi-family homes across Brooklyn, Queens, and
-        Nassau County every day. We coordinate with building managers and work
-        to minimize disruption to other tenants.
+        Yes. Floral Park HVAC Corp is a licensed, insured, and bonded HVAC company.
+        We hold a Nassau County Home Improvement Contractor license and maintain full
+        insurance on every job. You can verify our credentials through the Nassau
+        County license board.
       </p>
     ),
   },
@@ -71,35 +73,46 @@ const faqItems: FaqItem[] = [
     title: "What areas do you serve?",
     content: (
       <>
-        <p>We serve all of Brooklyn, Queens, and Nassau County including:</p>
+        <p>We serve Nassau County, Western Suffolk, and Northern Queens, including:</p>
         <p>
-          <strong>Brooklyn:</strong> Williamsburg, Greenpoint, Bushwick,
-          Bed-Stuy, Crown Heights, Park Slope, Sunset Park, Bay Ridge,
-          Bensonhurst, Dyker Heights, Gravesend, Sheepshead Bay, Coney Island
-          and more.
+          <strong>Nassau County:</strong> Floral Park, New Hyde Park, Garden City,
+          Mineola, Elmont, Valley Stream, Franklin Square, Hempstead, West Hempstead,
+          Rockville Centre, Oceanside, Merrick, Bellmore, Levittown, East Meadow,
+          Hicksville, Syosset, and more.
         </p>
         <p>
-          <strong>Queens:</strong> Astoria, LIC, Maspeth, Flushing, Whitestone,
-          Bayside, Forest Hills, Rego Park, Jackson Heights, Elmhurst, Middle
-          Village and more.
+          <strong>Western Suffolk:</strong> Brentwood, Bay Shore, Deer Park,
+          North Babylon, West Babylon, Lindenhurst, Amityville, and surrounding areas.
         </p>
         <p>
-          <strong>Nassau County:</strong> Valley Stream, Elmont, Franklin
-          Square, West Hempstead, Hempstead, Garden City, Mineola, New Hyde
-          Park, Rockville Centre, Oceanside, Freeport, Merrick, Bellmore,
-          Levittown, East Meadow and more.
+          <strong>Northern Queens:</strong> Floral Park (Queens), Queens Village,
+          Bellerose, Hollis, Jamaica, and surrounding neighborhoods.
         </p>
       </>
     ),
+    link: { label: "View All Service Areas", href: "/service-areas" },
   },
   {
-    title: "Do you clean up after the job?",
+    title: "How often should I get an HVAC tune-up?",
     content: (
       <p>
-        Yes — always. Every tech wears shoe covers, lays down drop cloths, and
-        cleans the workspace before leaving. We test the flow, show you the
-        results, and make sure your home is cleaner than we found it. That
-        &apos;s not a bonus — it&apos;s standard.
+        Once a year per system is the standard recommendation — ideally in spring
+        for your AC before the heat season, and in fall for your heating before
+        the cold hits. An annual tune-up catches small issues before they become
+        expensive emergency calls. We offer maintenance plans to keep you on a
+        consistent schedule without having to remember to book.
+      </p>
+    ),
+  },
+  {
+    title: "Do you offer financing or payment plans?",
+    content: (
+      <p>
+        {/* [TODO: Confirm financing options with client and update this answer] */}
+        For larger installations and system replacements, we work with customers
+        to find solutions that fit their budget. Call us at{" "}
+        <a href="tel:5168554328" className="ia-link">(516) 855-4328</a> to
+        discuss options for your specific project.
       </p>
     ),
   },
@@ -197,16 +210,16 @@ export default function GeneralFaqsPage() {
             <div className={`front-donation__in wow fadeInUpS${donationInView ? " is-visible" : ""}`} style={{ animationDelay: "0.2s" }}>
               <div className="content-entry">
                 <p>
-                  Call us at <strong>(718) 749-1830</strong> — our team picks up fast
-                  and can answer any question, schedule a same-day visit, or give you
+                  Call us at <strong>(516) 855-4328</strong> — our team picks up
+                  fast and can answer any question, schedule a visit, or give you
                   an honest assessment over the phone.
                 </p>
               </div>
               <div className="front-donation__btn-wrap">
                 <div className="front-donation__btn">
                   <SecondaryButton
-                    label="Call (718) 749-1830"
-                    href="tel:7187491830"
+                    label="Call (516) 855-4328"
+                    href="tel:5168554328"
                   />
                 </div>
               </div>

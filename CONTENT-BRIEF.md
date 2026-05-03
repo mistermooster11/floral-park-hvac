@@ -1,167 +1,201 @@
-# Pipe Monkeys — Content Brief
-**QuickFlip Sites | Build Log**
-Date: April 2026
-Prospect: pipemonkeys.com (Brooklyn, Queens & Nassau County drain/sewer)
-Template: NCCER clone (Next.js 14 App Router)
-Reference site: apexroofingpro.com
+# Floral Park HVAC — Content Brief
+**QuickFlip Sites | Build Log**  
+Date: May 3, 2026  
+Prospect: https://www.floralparkhvac.com/  
+Template: PipeMonkey (NCCER Clone v1)  
+Reference site: N/A — HVAC content library used for structural guidance  
 
 ---
 
 ## Source Material Summary
 
-Pipe Monkeys' existing site is a **single-page WordPress build** — no subpages, no blog, no gallery. All content was pulled from that one page and distributed across the template's 7-page structure. Key details extracted:
+**Business name:** Floral Park HVAC (Corp)  
+**Phone:** (516) 855-4328  
+**Address:** 7 Florence St, Floral Park, NY 11001  
+**Service area:** All Nassau County, Western Suffolk, Northern Queens, NY  
+**Business hours:** Monday–Friday 7am–5pm, Saturday 7am–1pm  
+**License/credentials:** Nassau County Home Improvement Contractor, licensed/insured/bonded; BuildZoom score 94 (top 24% of NY contractors)  
+**Facebook:** https://www.facebook.com/floralparkhvac/  
+**Partners/brands:** American Standard, Comfortmaker, Burnham, Aeroseal  
+**Tagline extracted:** "100% Honesty, Hard Workers."  
+**Key differentiators extracted:** Honest pricing, upfront estimates, licensed & insured, fast response, quality workmanship, years of local service  
+**Testimonial extracted:** "Floral Park HVAC is a company that was great from scheduling an appointment to completion of inspection and analysis of issues. I cannot say enough about their service and professionalism." — via HomeAdvisor/web search  
 
-- **Phone:** (718) 749-1830
-- **Service area:** Brooklyn, Queens, Nassau County
-- **Services:** Main sewer line, kitchen sink, tub/shower, toilet, hydro jetting, drain snaking, camera inspection, multi-unit/commercial
-- **Differentiators from site copy:** Upfront pricing, local NYC techs, cleanup guarantee, same-day scheduling
-- **Key testimonial:** Daniel Pipitone, Brooklyn homeowner — Google review
+---
+
+## Service Inventory — Floral Park HVAC
+
+Every item below has a corresponding slug in `data/craft-catalog/crafts.ts`:
+
+1. Central Air Conditioning — slug: `central-air-conditioning`
+2. Mini Split Systems — slug: `mini-split-systems`
+3. A/C Tune-Up & Maintenance Plans — slug: `ac-maintenance`
+4. Gas Heating — slug: `gas-heating`
+5. Oil Heating — slug: `oil-heating`
+6. Boilers — slug: `boilers`
+7. Water Heaters — slug: `water-heaters`
+8. Air Handlers & Duct Work — slug: `air-handlers-duct-work`
+9. Full System Replacements — slug: `system-replacements`
+
+**Source-to-slug mapping note:** The prospect's services page listed "A/C Service Plans," "Gas Heating Service Plans," and "Oil Heating Service Plans" as three separate entries. These have been mapped as follows:
+- A/C Service Plans → `central-air-conditioning` (repair/install) + `ac-maintenance` (tune-up plans)
+- Gas Heating Service Plans → `gas-heating` (includes maintenance discipline)
+- Oil Heating Service Plans → `oil-heating` (includes maintenance discipline)
+
+---
+
+## Services Consolidated
+
+None. All services from the source site are represented. The three "Service Plans" pages on the prospect site were 404 at time of crawl — content was inferred from homepage copy, Google Business Profile description, and the HVAC content library. See Copy Generation Log.
 
 ---
 
 ## Pages Built & Content Decisions
 
-### 1. Homepage (`app/page.tsx`)
-**Structure:** Hero → How It Works → Why Pipe Monkeys (stats) → Testimonial
+### Homepage (`app/page.tsx`)
+- Removed: `<Insights />`, `<Donation />`, `<Research />`, `<News />` (NCCER-specific components)
+- Kept: `<Hero />`, `<HomeSectionWithLine />` (wraps Announcements + Difference), `<Testimonial />`
+- Content: all from prospect site + generated gap fill (see Copy Generation Log)
 
-**Kept from source:** Business headline concept, service area list, tech credentials, upfront pricing promise, cleanup guarantee, testimonial
+### Hero (`components/custom/Hero.tsx`)
+- Headline: "Nassau County & Queens HVAC — Honest Pricing, Fast Service"
+- Subhead: Extracted from prospect site language ("honest pricing," "licensed, insured")
+- CTA: "Call (516) 855-4328" → `tel:5168554328`
+- Image slot: [TODO] — video fallback left in place; replace with real HVAC job video or photo
 
-**Cut from template:** Insights tabbed section (NCCER org-specific), Donation widget, Research section, News section — all irrelevant to a trade service business
+### Topnav (`components/custom/header/Topnav.tsx`)
+- Phone: (516) 855-4328
+- Hours shown: Mon–Fri 7am–5pm · Sat 7am–1pm (extracted from services page)
+- Logo slot: [TODO] — replace `/logos/logo-94.svg` with Floral Park HVAC logo
 
-**Generated:** "How It Works" 3-step process (Diagnose → Approve & Clear → Confirm & Clean Up) — written to match PM's stated process; short and concrete, no fluff
+### Footer (`components/custom/Footer.tsx`)
+- Quick links updated for HVAC structure
+- Contact widget: phone + address (7 Florence St, Floral Park, NY 11001) + hours
+- Service areas widget: Nassau County, Western Suffolk, Northern Queens
+- Social: Facebook only (https://www.facebook.com/floralparkhvac/)
+- Logo slot: [TODO] — replace `/logos/logo-long.svg` with Floral Park HVAC logo
 
-**Stats block:** "Same-Day", "4.9★", "100%" — drawn from real review signals. Note: Verify exact review count and rating with client before launch.
+### Announcements (`components/custom/Announcements.tsx`)
+- Headline: "Straight Answers, Upfront Pricing, Clean Work"
+- 3-step process rewritten for HVAC: Diagnose → Approve & Schedule → Test & Confirm
+- Copy generated from HVAC content library and prospect site differentiators
+- Image slot: [TODO]
 
----
+### Difference (`components/custom/Difference.tsx`)
+- Stats: Same-Day scheduling | Licensed/Insured/Bonded | 100% Upfront Pricing
+- Headline: "Honest HVAC Service You Can Actually Count On"
+- Image slot: [TODO]
 
-### 2. About Us (`app/explore/[slug]/page.tsx` → `/explore/pipemonkeys`)
-**Data file:** `data/channel/pipemonkeys.tsx`
+### Testimonial (`components/custom/Testimonial.tsx`)
+- Quote extracted from HomeAdvisor review sourced via web search
+- Attribution: "Verified Customer, Nassau County Homeowner"
+- Note: Prospect site had no individual named testimonials with quotes. [TODO] Swap with real named Google or Yelp reviews when client provides them.
 
-**Kept:** All copy about the business ethos, local knowledge angle, upfront pricing, cleanup guarantee, Daniel Pipitone testimonial
+### About Us (`data/channel/floralparkhvac.tsx`)
+- Slug: `floralparkhvac`
+- Registered in `data/channel/index.ts`
+- Content sections: tagline, license/credentials, upfront pricing, brands serviced, service area history
+- All copy either extracted from site or generated as gap fill (see Copy Generation Log)
 
-**Restructured:** Split into 4 headed subsections (Upfront Pricing, Local NYC Technicians, Clean Every Time, Real Results Guaranteed) — matches how Apex Roofing Pro handled their About section: scannable, value-point driven
+### Services Catalog (`data/craft-catalog/crafts.ts`)
+- 9 services across 3 categories: Cooling, Heating, Equipment
+- Categories: All Categories | Cooling | Heating | Equipment
+- Disciplines: All Disciplines | Installation | Repair | Maintenance | Replacement
 
-**Generated:** Intro paragraph ("When drains back up, homeowners need someone fast, honest, and effective…") — 1 tight paragraph, no fluff
+### Service Detail Cards (`data/programs.tsx`)
+- All 9 services have full paragraph descriptions
+- Mix of extracted and generated copy (see Copy Generation Log)
 
----
+### FAQs (`app/general-faqs/page.tsx`)
+- 8 HVAC-specific FAQs for Nassau County / Long Island audience
+- Topics: response time, upfront pricing, repair vs. replace, brands, licensing, service areas, tune-up frequency, financing
 
-### 3. Services Catalog (`app/craft-catalog/page.tsx`)
-**Data file:** `data/craft-catalog/crafts.ts`
+### Contact (`app/contact-us/page.tsx`)
+- 3 service area cards: Nassau County, Western Suffolk, Northern Queens
+- Hours and address extracted from prospect site
+- Google Maps embed: [TODO] — placeholder iframe needs real embed src
+- Contact form: [TODO] — placeholder div needs form embed
 
-**Replaced:** 67 NCCER craft items → 8 PM services
-- Main Sewer Lines | Kitchen Sinks | Tubs & Showers | Toilets | Hydro Jetting | Drain Snaking & Augering | Camera Inspection | Multi-Unit & Commercial Buildings
+### Gallery (`app/gallery/page.tsx`)
+- 6 job card placeholders (AC install, boiler replacement, air handler, mini split, system swap, water heater)
+- All images: [TODO] — placeholder backgrounds using dark fallback
 
-**Category taxonomy:** Drain Cleaning / Advanced Services / Commercial — mirrors the filterable nav pattern from the template
+### Service Areas (`app/service-areas/page.tsx`)
+- 3 regional sections: Nassau County, Western Suffolk, Northern Queens
+- Neighborhood lists extracted from services page + expanded with local knowledge
 
----
-
-### 4. Service Detail Pages (`app/programs-crafts/programs/page.tsx`)
-**Data file:** `data/programs.tsx`
-
-**Kept:** PM's actual service descriptions, rewritten for clarity and scannability
-
-**Generated:** Service descriptions for each of the 7 services — written from PM's existing single-page copy, expanded slightly to fill the card format. Each is 1 focused paragraph, no padding.
-
-**Cut:** Partner logos section (no external partners applicable)
-
----
-
-### 5. FAQs (`app/general-faqs/page.tsx`)
-
-**Kept:** All 7 FAQs are grounded in PM's real positioning and services — pulled directly from what the site communicated
-
-**Generated:** Q&A format copy — none of it contradicts PM's actual service model. All answers directly mirror their stated approach (upfront pricing, cleanup, same-day scheduling)
-
-**CTA:** Changed from NCCER donation to phone call CTA
-
----
-
-### 6. Contact Us (`app/contact-us/page.tsx`)
-
-**Kept:** Phone number, service area info, form embed (HubSpot iframe — left in place)
-
-**Replaced:** NCCER staff directory → 3 service area cards (Brooklyn, Queens, Nassau) with full neighborhood lists
-
-**TODO flagged:** Contact form iframe — client needs to verify the HubSpot form ID or replace with their preferred form tool
-
----
-
-### 7. Gallery (`app/gallery/page.tsx`) — **NEW PAGE**
-**Source:** Reference site (Apex Roofing Pro) showed Before/After gallery as a primary trust signal. PM has no existing gallery.
-
-**Decision:** Built full gallery page with 6 placeholder before/after cards across all service categories. Layout uses 2-column before/after image pairs per job card.
-
-**All images flagged:** `[TODO: swap image]` throughout — client needs to provide real job photos
-
----
-
-### 8. Service Areas (`app/service-areas/page.tsx`) — **NEW PAGE**
-**Source:** Reference site had a dedicated service area section. PM serves 3 distinct regions with very different housing stock.
-
-**Decision:** Built one page with 3 anchor-linked sections (Brooklyn, Queens, Nassau County). Each section has: a localized description, 3 specific callouts, full neighborhood list.
-
-**Generated:** All copy — written to be locally specific (brownstones in Brooklyn, long sewer runs in Nassau, mixed housing types in Queens). All factual details are consistent with PM's actual service area.
-
----
-
-### 9. Blog (`app/blog/page.tsx`) — **NEW PAGE**
-**Source:** Reference site had a blog. PM has none.
-
-**Decision:** Built a placeholder blog index with 6 sample posts. Post titles and excerpts are real content angles Pipe Monkeys could use — all relevant to their actual services and customer pain points.
-
-**TODO flagged:** All posts are placeholders. Client needs to: (a) decide if they want a blog, (b) wire up CMS or create individual post pages if yes.
+### Blog (`app/blog/page.tsx`)
+- 6 placeholder article cards with HVAC/Long Island topics
+- All flagged [TODO] — replace with real written content or CMS
 
 ---
 
 ## Navigation Changes
 
-**Template had:** 7-item mega-dropdown NCCER nav (CraftPro, Explore, Crafts, Credentials, Career Pathways, Research, Our Impact, About Us)
+**From template default (7-item NCCER mega-dropdown nav):**  
+**To:** 5-item flat nav — Home | Services | Service Areas | FAQs | Contact  
 
-**PM nav:** Home | Services | FAQs | Contact — 4 flat items, no dropdowns. Matches Apex Roofing Pro's lean 4-item pattern.
-
-**Topnav:** Replaced NCCER utility links (Find My NCCER Number, Take Module Test) with PM phone number bar: "(718) 749-1830 — Same-Day Service Available"
-
-**Footer:** Replaced NCCER widgets (Donation, Mailing List) with PM Contact Info + Service Areas summary
-
----
-
-## TODOs for Client Before Launch
-
-| Item | File | Notes |
-|------|------|-------|
-| Hero image/video | `components/custom/Hero.tsx` | Replace placeholder with PM photo |
-| Logo files | `Topnav.tsx`, `Footer.tsx` | Replace `/logos/logo-94.svg` and `/logos/logo-long.svg` |
-| Gallery photos | `app/gallery/page.tsx` | All 6 before/after pairs need real job photos |
-| Difference section photo | `components/custom/Difference.tsx` | Job site or team photo needed |
-| Announcements photo | `components/custom/Announcements.tsx` | One team/job site photo |
-| Contact form | `app/contact-us/page.tsx` | Verify HubSpot form ID or replace with preferred form |
-| Social media links | `components/custom/Footer.tsx` | Verify actual Facebook/Instagram URLs |
-| Business hours | `components/custom/Footer.tsx` | Mon–Sat 7am–8pm is a placeholder — confirm with client |
-| Review count/rating | `components/custom/Difference.tsx` | "4.9★" — verify current rating |
-| Blog decision | `app/blog/page.tsx` | Client to decide: live blog or remove page |
-| Additional testimonials | `components/custom/Testimonial.tsx` | Currently 1 quote — request more from client |
+Added "Service Areas" as a 5th item because regional coverage is a key differentiator for this prospect (three distinct coverage areas). Flat structure per template map recommendation for trade clients.
 
 ---
 
 ## Copy Generation Log
 
-All generated copy is marked below. Everything else is derived directly from pipemonkeys.com or is structural/navigational.
+All copy below was generated — it does not appear verbatim on the prospect's source site:
 
-**Generated (short):**
-- Homepage intro headline refinement
-- "How It Works" 3-step process in `Announcements.tsx`
-- Stats block labels in `Difference.tsx`
-- Blog post titles and excerpts (6 items) — placeholders only
-- Service area descriptions for Brooklyn, Queens, Nassau County in `service-areas/page.tsx`
+| Section | Generated | Basis |
+|---------|-----------|-------|
+| About Us `learnMore.content` | Full 4 sections | Prospect credentials, differentiators + HVAC library |
+| Hero headline | Full | Prospect service area + differentiators |
+| Hero subhead | Full | Prospect site language, condensed |
+| Announcements 3-step process | Full | HVAC content library adapted to this client |
+| Difference stats | Partial (labels) | Prospect differentiators |
+| `data/programs.tsx` — all 9 service descriptions | Full | HVAC content library, adapted for Nassau County |
+| FAQs — all 8 questions + answers | Full | HVAC content library, adapted for Nassau County |
+| Service area section descriptions | Full | Prospect service area data + local knowledge |
+| Blog post titles + excerpts | Full | HVAC content library topics, localized to Nassau County |
+| Gallery job card labels | Full | Service types + local neighborhood names |
 
-**Generated (micro-copy):**
-- CTA button labels throughout
-- Breadcrumbs
-- Sub-headings and section labels
+**Testimonial note:** The quote used in `Testimonial.tsx` is derived from a HomeAdvisor review fragment found via web search. It is attributed generally as "Verified Customer, Nassau County Homeowner." [TODO]: Replace with a real named review from Google/Yelp once client provides.
 
-**Not generated — pulled from source:**
-- All service descriptions
-- All FAQ answers
-- Daniel Pipitone testimonial
-- Neighborhood lists
-- Phone number, pricing philosophy, cleanup guarantee language
+---
+
+## TODOs for Client Before Launch
+
+| # | Item | File | Notes |
+|---|------|------|-------|
+| 1 | Replace hero video/image | `components/custom/Hero.tsx` | Swap `<source src>` with actual HVAC job video or still photo |
+| 2 | Replace Announcements section image | `components/custom/Announcements.tsx` | Set `backgroundImage` to a real team/job site photo URL |
+| 3 | Replace Difference section image | `components/custom/Difference.tsx` | Set `<VapeImage src>` to a real photo URL |
+| 4 | Replace logo (header mobile) | `components/custom/header/Topnav.tsx` | Swap `/logos/logo-94.svg` with client logo file |
+| 5 | Replace logo (footer) | `components/custom/Footer.tsx` | Swap `/logos/logo-long.svg` with client logo file |
+| 6 | Update About Us hero image | `data/channel/floralparkhvac.tsx → hero.imageBg` | Replace URL with actual background image |
+| 7 | Update About Us feature image | `data/channel/floralparkhvac.tsx → flexFeature.imageSrc` | Replace URL with actual feature photo |
+| 8 | All gallery before/after photos | `app/gallery/page.tsx` | Replace all 12 placeholder slots with real job photos |
+| 9 | Google Maps embed | `app/contact-us/page.tsx` | Replace placeholder iframe src with real embed for 7 Florence St, Floral Park, NY 11001 |
+| 10 | Contact form embed | `app/contact-us/page.tsx` | Replace placeholder div with JotForm, HubSpot, or preferred form tool |
+| 11 | Replace testimonial quote | `components/custom/Testimonial.tsx` | Swap generic quote with real named Google/Yelp review |
+| 12 | Confirm financing answer | `app/general-faqs/page.tsx` | Update FAQ #8 once financing options confirmed with client |
+| 13 | Replace blog placeholder posts | `app/blog/page.tsx` | Write real content or connect CMS; all current posts are placeholder titles |
+| 14 | Add Instagram URL | `components/custom/Footer.tsx` | If client has Instagram, add to `socials[]` array |
+| 15 | Delete or update `pipeline-corrosion-control` page | `app/craft-catalog/pipeline-corrosion-control/` | NCCER template example page — delete before launch or replace with an HVAC service detail page |
+| 16 | Update programs-crafts hero background | `data/programs.tsx → hero.bgImage` | Replace URL with actual hero photo |
+
+---
+
+## Pre-Delivery QA Checklist
+
+- [x] Service Inventory: all 9 services have slugs in `crafts.ts`
+- [x] Client registered in `data/channel/index.ts`
+- [x] No old Pipe Monkeys phone (718-749-1830) in any client-authored file
+- [x] No "Pipe Monkeys" brand name in components, app pages, or lib files
+- [x] NCCER content removed from `app/page.tsx`
+- [x] Nav simplified to 5 flat items, exported as `MainNavItem[]` with explicit type
+- [x] All `tel:` hrefs use `5168554328`
+- [x] Facebook link uses actual client URL (https://www.facebook.com/floralparkhvac/)
+- [x] Footer contact info includes actual address and hours
+- [ ] Hero video: placeholder (nccer.org video) — flagged TODO #1
+- [ ] All image slots: dark fallback backgrounds in place — flagged TODOs #2-8
+- [ ] Google Maps embed: placeholder — flagged TODO #9
+- [ ] Contact form: placeholder — flagged TODO #10
+- [ ] `pipeline-corrosion-control` NCCER example page: flagged TODO #15

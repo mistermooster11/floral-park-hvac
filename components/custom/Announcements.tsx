@@ -28,7 +28,7 @@ export default function Announcements() {
 
         <div className="front-announcements__inner">
           <div className="sub-heading">How It Works</div>
-          <h3 className="h3">Fast, Clean, and Priced Up Front</h3>
+          <h3 className="h3">Straight Answers, Upfront Pricing, Clean Work</h3>
         </div>
 
         <div className="relative z-20 front-announcements__content">
@@ -39,7 +39,7 @@ export default function Announcements() {
               <span
                 style={{
                   backgroundImage:
-                    'url(https://pipemonkeys.com/) no-repeat center center / cover',
+                    'url(https://www.floralparkhvac.com/) no-repeat center center / cover',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: '50% 50%',
                   backgroundSize: 'cover',
@@ -49,7 +49,7 @@ export default function Announcements() {
                   backgroundColor: '#101d2b',
                 }}
               />
-              {/* [TODO: Replace with Pipe Monkeys team or job site photo] */}
+              {/* [TODO: Replace with Floral Park HVAC team or job site photo] */}
             </div>
           </div>
 
@@ -57,23 +57,26 @@ export default function Announcements() {
           <div className="front-announcements__text">
             <div className="content-entry">
               <p>
-                Every call starts the same way: we show up, diagnose the problem in front
-                of you, explain exactly what needs to happen, and give you the price before
-                a single tool touches your drain. No guessing, no surprise invoices — just
-                a straight answer and a plan.
+                Every service call starts the same way: we show up on time,
+                assess your system, and explain exactly what&apos;s wrong and
+                what it will take to fix it — before any work begins. No
+                surprise charges. No upselling on work you don&apos;t need.
               </p>
               <p>
-                <strong>Step 1: Diagnose.</strong> Our tech assesses the blockage and
-                identifies the right tool for the job — snake, auger, or hydro jet.
+                <strong>Step 1: Diagnose.</strong> Our tech inspects your
+                system and identifies the issue. We explain it to you in plain
+                language before we recommend anything.
               </p>
               <p>
-                <strong>Step 2: Approve &amp; Clear.</strong> You get the price first.
-                Once you&apos;re ready, we go to work. Most jobs are done in under an hour.
+                <strong>Step 2: Approve &amp; Schedule.</strong> You get the
+                full price upfront. Once you&apos;re ready, we go to work.
+                We carry common parts on the truck so most repairs are done
+                same visit.
               </p>
               <p>
-                <strong>Step 3: Confirm &amp; Clean Up.</strong> We test the flow in front
-                of you, clean the work area, and don&apos;t leave until the drain is
-                fully clear.
+                <strong>Step 3: Test &amp; Confirm.</strong> We run the system
+                through a full cycle, verify it&apos;s performing correctly,
+                and don&apos;t leave until you&apos;re satisfied with the result.
               </p>
             </div>
 
