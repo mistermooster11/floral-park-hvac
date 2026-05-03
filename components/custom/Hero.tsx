@@ -117,6 +117,7 @@ export default function Hero() {
                   preload="none"
                   className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-[200%]"
                 >
+                  {/* [TODO: Replace with Floral Park HVAC job site video — swap src below] */}
                   <source
                     src="https://www.nccer.org/media/2023/03/Hero-Website-Video-3.mp4"
                     type="video/mp4"

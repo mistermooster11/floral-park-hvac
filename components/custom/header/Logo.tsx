@@ -21,11 +21,12 @@ const Logo = ({ isFixed = false, isLoaded = false }: LogoProps) => {
           isLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-[50px]",
         ].join(" ")}
       >
-        <span className="sr-only">NCCER</span>
+        <span className="sr-only">Floral Park HVAC</span>
+        {/* [TODO: Replace with Floral Park HVAC logo SVG] */}
         <img
           className="w-full"
           src="/logos/logo-large.svg"
-          alt="Logo of NCCER"
+          alt="Floral Park HVAC logo"
         />
       </Link>
     </div>

@@ -50,13 +50,13 @@ export default function Insights() {
 
           {/* HEAD */}
           <div className="front-insights__head py-0 md:py-50">
-            <div className="sub-heading sub-heading__white">Insights</div>
-            <h2 className="h3 ia-white">Resources For Organizations</h2>
+            <div className="sub-heading sub-heading__white">Our Services</div>
+            <h2 className="h3 ia-white">What We Do Best</h2>
             <div className="content-entry ia-white max-w-2xl">
               <p className="ia-white">
-                NCCER is committed to serving organizations of all sizes by providing rigorous and relevant
-                construction education and workforce development solutions. Click an organization type below
-                to quickly access useful resources for your programs.
+                From central air and mini splits to boilers, water heaters, and full system replacements —
+                Floral Park HVAC handles every heating and cooling need across Nassau County, Western Suffolk,
+                and Northern Queens. Click a category below to learn more.
               </p>
             </div>
           </div>

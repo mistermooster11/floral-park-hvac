@@ -2,9 +2,9 @@ import CraftCatalogHero from "@/components/custom/craft-catalog/CraftCatalogHero
 import CraftCatalogClient from "@/components/custom/craft-catalog/CraftCatalogClient";
 
 export const metadata = {
-  title: "Craft Catalog – NCCER",
+  title: "HVAC Services – Floral Park HVAC",
   description:
-    "NCCER offers a broad portfolio of curricula that spans a wide range of construction and maintenance disciplines to ensure organizations and learners of all backgrounds can find options to fit their needs.",
+    "Air conditioning, heating, boilers, water heaters, and full system replacements across Nassau County, Western Suffolk, and Northern Queens. Honest pricing, same-day scheduling.",
 };
 
 export default function CraftCatalogPage() {

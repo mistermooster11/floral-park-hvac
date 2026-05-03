@@ -3,18 +3,18 @@ import { ExternalLink } from 'lucide-react';
 
 const socialLinks = [
   {
-    label: 'Donate',
-    href: 'https://secure.givelively.org/donate/national-center-for-construction-education-research/build-america-change-lives',
+    label: 'Facebook',
+    href: 'https://www.facebook.com/floralparkhvac/',
     filled: false,
   },
   {
-    label: 'Support',
-    href: 'https://tracker.pardot.nccer.org/l/961192/2024-03-22/5hfvt',
+    label: 'Schedule Service',
+    href: '/contact-us',
     filled: false,
   },
   {
-    label: 'Sign In',
-    href: 'https://web.myaccount.nccer.org/',
+    label: 'Call Us',
+    href: 'tel:5168554328',
     filled: true,
   },
 ];

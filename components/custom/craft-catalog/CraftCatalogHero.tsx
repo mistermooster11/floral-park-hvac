@@ -24,21 +24,21 @@ export default function CraftCatalogHero() {
                 style={{ transitionDelay: "0.1s" }}
               >
                 <p>
-                  NCCER offers a broad portfolio of curricula that spans a wide
-                  range of construction and maintenance disciplines to ensure
-                  organizations and learners of all backgrounds can find options
-                  to fit their needs.
+                  Air conditioning, heating, boilers, water heaters, and full
+                  system replacements — we handle every HVAC need for Nassau
+                  County homeowners, with honest pricing and same-day scheduling.
                 </p>
               </div>
             </div>
 
             {/* Decorative graphic with vape reveal */}
             <div className={`hero-org__image vape wow ia-bg-dark${vis}`}>
+              {/* [TODO: Replace with Floral Park HVAC graphic or logo element] */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="vape-el"
                 src="https://www.nccer.org/wp-content/themes/nccer/assets/images/graphic-logo.png"
-                alt="Logo element"
+                alt="Floral Park HVAC"
               />
             </div>
 

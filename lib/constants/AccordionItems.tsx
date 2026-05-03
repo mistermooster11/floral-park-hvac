@@ -4,60 +4,62 @@ type AccordionLink = { label: string; href: string; external?: boolean };
 export const accordionItems = [
   {
     id: "accordion-0",
-    title: "Associations",
-    image: "https://www.nccer.org/media/2022/12/iStock-530983109-1.jpg",
+    title: "Air Conditioning",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    // [TODO: Replace with actual AC install/service photo from client]
     description:
-      "NCCER can help provide your members with a complete workforce development program that includes recruitment, training, and retention tools. These tools can be incorporated into the services you offer to better serve your membership and help your organization generate non-dues revenue.",
-    learnHref: "https://www.nccer.org/explore/associations/",
+      "We install, service, and repair central air conditioning systems and mini splits across Nassau County, Western Suffolk, and Northern Queens. From a no-cool call in the middle of July to a full system replacement, our techs carry the right parts and get it done fast.",
+    learnHref: "/craft-catalog/central-air-conditioning",
     links: [
-      { label: "Become NCCER Accredited", href: "https://www.nccer.org/benefits-of-nccer-accreditation/" },
-      { label: "Contact Our WFD Solutions Team", href: "https://www.nccer.org/nccer-workforce-development-team/" },
-      { label: "Order Books & Modules", href: "https://www.nccer.org/order-books-modules/" },
-      { label: "Promote Your Program With Pre-Designed Templates", href: "https://hs.nccer.org/association-resources-kit", external: true },
-      { label: "View Journey-Level Assessments", href: "https://www.nccer.org/assessments/" },
+      { label: "Central Air Conditioning",     href: "/craft-catalog/central-air-conditioning"  },
+      { label: "Mini Split Systems",           href: "/craft-catalog/mini-split-systems"         },
+      { label: "A/C Tune-Up & Maintenance",    href: "/craft-catalog/ac-maintenance"             },
+      { label: "Schedule AC Service",          href: "/contact-us"                               },
     ] as AccordionLink[],
   },
   {
     id: "accordion-1",
-    title: "Contractors",
-    image: "https://www.nccer.org/media/2023/03/IMG_9688-1024x682.jpg",
+    title: "Heating",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+    // [TODO: Replace with actual heating/boiler photo from client]
     description:
-      "NCCER provides programs that contractors use to assess, educate and train their craft workforce and develop customized training plans utilizing NCCER curricula.",
-    learnHref: "https://www.nccer.org/explore/contractors/",
+      "Gas, oil, or hot water — we service all heating systems common to Long Island homes. Our technicians diagnose furnace and boiler failures, perform annual tune-ups, and handle full system replacements. We don't leave until your heat is back on.",
+    learnHref: "/craft-catalog/gas-heating",
     links: [
-      { label: "Contractors Workforce Development Assessment", href: "https://www.nccer.org/programs-crafts/contractors-workforce-development-assessment/" },
-      { label: "Learn About Industry-Recognized Credentials", href: "https://www.nccer.org/credentials-certifications/industry-recognized-credentials/" },
-      { label: "National Training Service Agreement", href: "https://www.nccer.org/national-training-service-agreement/" },
-      { label: "Verify Credentials", href: "https://web.myaccount.nccer.org/#/online-verification", external: true },
-      { label: "View Our Journey-Level Assessments", href: "https://www.nccer.org/assessments/" },
+      { label: "Gas Heating",         href: "/craft-catalog/gas-heating"   },
+      { label: "Oil Heating",         href: "/craft-catalog/oil-heating"   },
+      { label: "Boilers",             href: "/craft-catalog/boilers"       },
+      { label: "Schedule Heating Service", href: "/contact-us"             },
     ] as AccordionLink[],
   },
   {
     id: "accordion-2",
-    title: "High Schools",
-    image: "https://www.nccer.org/media/2023/02/Image.jpg",
+    title: "Equipment & Installs",
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+    // [TODO: Replace with actual water heater or air handler install photo from client]
     description:
-      "NCCER's program accreditation is recognized by many state Departments of Education and links secondary, postsecondary and journeyman-level training for skilled craft professionals.",
-    learnHref: "https://www.nccer.org/explore/high-schools/",
+      "Water heaters, air handlers, ductwork, and full system swaps. Whether you're upgrading aging equipment or replacing a failed unit, we install American Standard, Comfortmaker, and Burnham equipment with full warranty and Nassau County licensed work.",
+    learnHref: "/craft-catalog/water-heaters",
     links: [
-      { label: "Access the Instructor Toolbox", href: "https://toolbox.nccer.org/", external: true },
-      { label: "Become NCCER Accredited", href: "https://www.nccer.org/benefits-of-nccer-accreditation/" },
-      { label: "Learn About High School Builder Program", href: "https://www.nccer.org/builderprogram/" },
-      { label: "Order Books & Modules", href: "https://www.nccer.org/order-books-modules/" },
+      { label: "Water Heaters",           href: "/craft-catalog/water-heaters"        },
+      { label: "Air Handlers & Duct Work", href: "/craft-catalog/air-handlers-duct-work" },
+      { label: "Full System Replacements", href: "/craft-catalog/system-replacements" },
+      { label: "Get a Free Estimate",      href: "/contact-us"                        },
     ] as AccordionLink[],
   },
   {
     id: "accordion-3",
-    title: "Postsecondary",
-    image: "https://www.nccer.org/media/2023/03/Masonrycompetition11-1024x680.jpg",
+    title: "Maintenance Plans",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+    // [TODO: Replace with actual maintenance/tune-up photo from client]
     description:
-      "NCCER programs offered by postsecondary institutions provide learners with a pathway to lucrative jobs, and countless opportunities for growth and advancement within a rewarding career in construction.",
-    learnHref: "https://www.nccer.org/explore/postsecondary/",
+      "Annual tune-ups catch small issues before they become emergency calls. We recommend one check per system, per year — AC in spring, heating in fall. Our maintenance plans keep you on schedule and often include priority booking for repairs during peak season.",
+    learnHref: "/craft-catalog/ac-maintenance",
     links: [
-      { label: "Access the Instructor Toolbox", href: "https://toolbox.nccer.org/", external: true },
-      { label: "Become NCCER Accredited", href: "https://www.nccer.org/benefits-of-nccer-accreditation/" },
-      { label: "Order Books & Modules", href: "https://www.nccer.org/order-books-modules/" },
-      { label: "Learn About Automated Remote Proctoring", href: "https://www.nccer.org/automated-remote-proctoring/" },
+      { label: "A/C Tune-Up & Maintenance Plans", href: "/craft-catalog/ac-maintenance"          },
+      { label: "View All Services",               href: "/craft-catalog"                          },
+      { label: "Call (516) 855-4328",             href: "tel:5168554328"                         },
+      { label: "Schedule a Tune-Up",              href: "/contact-us"                             },
     ] as AccordionLink[],
   },
 ];

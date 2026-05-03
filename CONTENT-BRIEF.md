@@ -2,7 +2,7 @@
 **QuickFlip Sites | Build Log**  
 Date: May 3, 2026  
 Prospect: https://www.floralparkhvac.com/  
-Template: PipeMonkey (NCCER Clone v1)  
+Template: PipeMonkey-Redesign (v2 — last updated May 3, 2026)  
 Reference site: N/A — HVAC content library used for structural guidance  
 
 ---
