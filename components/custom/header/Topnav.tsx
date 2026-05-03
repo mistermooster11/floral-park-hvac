@@ -25,7 +25,7 @@ const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
                         className="flex items-center gap-2 text-brand-sky text-[1.4rem] font-light tracking-[.05rem] py-[2rem] no-underline transition-colors duration-[350ms] hover:text-[#daedf5]"
                     >
                         <Phone size={14} strokeWidth={2} />
-                        <span>(516) 855-4328 — Mon–Fri 7am–5pm &bull; Sat 7am–1pm</span>
+                        <span>Same Day Scheduling Available &nbsp;&bull;&nbsp; (516) 855-4328</span>
                     </a>
                 </div>
 
