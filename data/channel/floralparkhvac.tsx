@@ -82,7 +82,7 @@ const floralparkhvac: ChannelPageData = {
       { title: "Call Us Now — (516) 855-4328",    href: "tel:5168554328",  icon: "icon-message" },
       { title: "Contact Us Online",               href: "/contact-us",     icon: "icon-mail"    },
       { title: "Our Services",                    href: "/craft-catalog",  icon: "icon-link"    },
-      { title: "Service Areas",                   href: "/service-areas",  icon: "icon-info"    },
+      { title: "Service Areas",                   href: "/contact-us",     icon: "icon-info"    },
       { title: "Frequently Asked Questions",      href: "/general-faqs",   icon: "icon-link"    },
     ],
   },

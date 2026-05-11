@@ -90,7 +90,7 @@ const faqItems: FaqItem[] = [
         </p>
       </>
     ),
-    link: { label: "View All Service Areas", href: "/service-areas" },
+    link: { label: "View Service Areas & Contact Info", href: "/contact-us" },
   },
   {
     title: "How often should I get an HVAC tune-up?",

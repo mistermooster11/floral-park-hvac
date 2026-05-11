@@ -6,7 +6,7 @@ import { useInView } from "framer-motion";
 const quickLinks = [
   { label: "Our Services",               href: "/craft-catalog",   external: false },
   { label: "Frequently Asked Questions", href: "/general-faqs",    external: false },
-  { label: "Service Areas",              href: "/service-areas",   external: false },
+  { label: "Service Areas",              href: "/contact-us",      external: false },
   { label: "Before & After Gallery",     href: "/gallery",         external: false },
   { label: "Contact Us",                 href: "/contact-us",      external: false },
 ];
@@ -93,7 +93,7 @@ export default function Footer() {
               </p>
             </div>
             <a
-              href="/service-areas"
+              href="/contact-us"
               className={`ia-link ia-link--arrow ia-link--white wow${vis}`}
             >
               <i className="icon-arrow-right ia-orange" />
