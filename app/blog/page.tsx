@@ -81,7 +81,7 @@ function PostCard({ post, delay }: { post: typeof posts[number]; delay: string }
             className="p3 ia-medium"
             style={{
               padding: "0.3rem 1rem",
-              background: "var(--ia-sky, #a1c5d3)",
+              background: "var(--ia-sky, #3CC4FF)",
               borderRadius: "4px",
               fontSize: "1.2rem",
             }}

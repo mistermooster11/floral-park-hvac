@@ -9,7 +9,7 @@ interface TopnavProps {
 
 const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
     return (
-        <div className="bg-[#101d2b] border-b border-[rgba(161,197,211,.3)] w-full">
+        <div className="bg-[#1A1A1A] border-b border-[rgba(60,196,255,.3)] w-full">
             <div className="inner inner-header flex flex-row items-center justify-between min-h-[4.4rem] p-0">
 
                 {/* Mobile logo */}
@@ -22,7 +22,7 @@ const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
                 <div className="header__left hidden lg:block">
                     <a
                         href="tel:5168554328"
-                        className="flex items-center gap-2 text-brand-sky text-[1.4rem] font-light tracking-[.05rem] py-[2rem] no-underline transition-colors duration-[350ms] hover:text-[#daedf5]"
+                        className="flex items-center gap-2 text-brand-sky text-[1.4rem] font-light tracking-[.05rem] py-[2rem] no-underline transition-colors duration-[350ms] hover:text-[#99DEFF]"
                     >
                         <Phone size={14} strokeWidth={2} />
                         <span>Same Day Scheduling Available &nbsp;&bull;&nbsp; (516) 855-4328</span>

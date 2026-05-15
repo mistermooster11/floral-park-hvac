@@ -46,7 +46,7 @@ export default function Announcements() {
                   display: 'block',
                   width: '100%',
                   height: '100%',
-                  backgroundColor: '#101d2b',
+                  backgroundColor: '#1A1A1A',
                 }}
               />
               {/* [TODO: Replace with Floral Park HVAC team or job site photo] */}
