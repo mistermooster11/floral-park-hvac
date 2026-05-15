@@ -19,7 +19,7 @@ const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
                 </Link>
 
                 {/* Left: phone number — desktop only */}
-                <div className="header__left hidden lg:block">
+                <div className="header__left hidden lg:flex lg:flex-1 items-center">
                     <a
                         href="tel:5168554328"
                         className="flex items-center gap-2 text-brand-sky text-[1.4rem] font-light tracking-[.05rem] py-[2rem] no-underline transition-colors duration-[350ms] hover:text-[#99DEFF]"
