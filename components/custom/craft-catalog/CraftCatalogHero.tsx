@@ -16,12 +16,17 @@ export default function CraftCatalogHero() {
 
             {/* Text block */}
             <div className="hero-org__text">
-              <h1 className={`ia-white fadeInUpS wow${vis}`}>
-                Craft Catalog
+              <div className={`breadcrumbs ia-sky fadeInUpS wow${vis}`}>
+                <a href="/">Home</a>
+                <em>&gt;</em>
+                <span className="post post-page current-item">Our Services</span>
+              </div>
+              <h1 className={`ia-white fadeInUpS wow${vis}`} style={{ animationDelay: "0.1s" }}>
+                Our Services
               </h1>
               <div
                 className={`content-entry ia-white fadeInUpS wow${vis}`}
-                style={{ transitionDelay: "0.1s" }}
+                style={{ animationDelay: "0.2s" }}
               >
                 <p>
                   Air conditioning, heating, boilers, water heaters, and full
@@ -29,17 +34,6 @@ export default function CraftCatalogHero() {
                   County homeowners, with honest pricing and same-day scheduling.
                 </p>
               </div>
-            </div>
-
-            {/* Decorative graphic with vape reveal */}
-            <div className={`hero-org__image vape wow ia-bg-dark${vis}`}>
-              {/* [TODO: Replace with Floral Park HVAC graphic or logo element] */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="vape-el"
-                src="https://www.nccer.org/wp-content/themes/nccer/assets/images/graphic-logo.png"
-                alt="Floral Park HVAC"
-              />
             </div>
 
           </div>
