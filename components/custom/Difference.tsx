@@ -45,7 +45,7 @@ export default function Difference() {
           <div className="w-full md:w-[54%] shrink-0 relative z-20">
             <div className="front-difference__image">
               {/* [TODO: Replace with Floral Park HVAC job site or technician photo] */}
-              <VapeImage src="https://www.floralparkhvac.com/" />
+              <VapeImage src="https://placehold.co/900x700/e8eef5/153B7D?text=HVAC+Photo" />
             </div>
           </div>
 
