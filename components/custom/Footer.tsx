@@ -30,12 +30,12 @@ export default function Footer() {
         <div className={`footer__logo fadeInUpS wow${vis}`}>
           <a href="/">
             <span className="sr-only">Floral Park HVAC</span>
-            {/* [TODO: Replace with Floral Park HVAC logo] */}
             <img
-              src="/logos/logo-long.svg"
+              src="/logos/Floral_Park_HVAC_Logo.png"
               alt="Floral Park HVAC"
               width="220"
-              height="48"
+              height="80"
+              style={{ objectFit: 'contain' }}
             />
           </a>
         </div>

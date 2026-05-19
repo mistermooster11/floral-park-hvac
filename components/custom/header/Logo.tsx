@@ -22,10 +22,9 @@ const Logo = ({ isFixed = false, isLoaded = false }: LogoProps) => {
         ].join(" ")}
       >
         <span className="sr-only">Floral Park HVAC</span>
-        {/* [TODO: Replace with Floral Park HVAC logo SVG] */}
         <img
-          className="w-full"
-          src="/logos/logo-large.svg"
+          className="w-full h-full object-contain"
+          src="/logos/Floral_Park_HVAC_Logo.png"
           alt="Floral Park HVAC logo"
         />
       </Link>

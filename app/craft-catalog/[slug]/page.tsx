@@ -5,8 +5,8 @@ import CraftOverview  from "@/components/custom/craft-catalog/CraftOverview";
 import RelatedCrafts  from "@/components/custom/craft-catalog/RelatedCrafts";
 import { servicePages } from "@/data/craft-catalog/service-pages";
 
-// [TODO: Replace with a real Floral Park HVAC job site photo once assets are provided]
-const PLACEHOLDER_BG = "/images/IMG_9688-1024x682.jpg";
+// Hero background — real Floral Park HVAC job site photo
+const PLACEHOLDER_BG = "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4336.jpg.webp";
 
 /* Pre-render all known service slugs at build time */
 export function generateStaticParams() {

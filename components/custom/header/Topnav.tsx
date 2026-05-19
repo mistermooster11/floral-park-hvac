@@ -14,8 +14,7 @@ const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
 
                 {/* Mobile logo */}
                 <Link href="/" className="block lg:hidden float-left" aria-label="Floral Park HVAC">
-                    {/* [TODO: Replace with Floral Park HVAC logo SVG] */}
-                    <img src="/logos/logo-94.svg" alt="Floral Park HVAC" className="block h-[3.6rem]" />
+                    <img src="/logos/Floral_Park_HVAC_Logo.png" alt="Floral Park HVAC" className="block h-[3.6rem] w-auto object-contain" />
                 </Link>
 
                 {/* Left: phone number — desktop only */}

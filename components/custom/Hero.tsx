@@ -108,21 +108,13 @@ export default function Hero() {
                   visible ? 'h-full scale-100' : 'h-0 scale-[1.2]',
                 ].join(' ')}
               >
-                {/* [TODO: Replace src with a Floral Park HVAC hero video or photo] */}
-                <video
-                  loop
-                  autoPlay
-                  muted
-                  playsInline
-                  preload="none"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-[200%]"
-                >
-                  {/* [TODO: Replace with Floral Park HVAC job site video — swap src below] */}
-                  <source
-                    src="https://www.nccer.org/media/2023/03/Hero-Website-Video-3.mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                {/* Floral Park HVAC — hero image */}
+                <img
+                  src="https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/IMG_4283-scaled.jpg.webp"
+                  alt="Floral Park HVAC technician on the job"
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none object-cover"
+                  loading="eager"
+                />
               </div>
             </div>
 

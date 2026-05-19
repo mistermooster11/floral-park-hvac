@@ -38,7 +38,7 @@ export const programsData: ProgramsPageData = {
   ],
 
   hero: {
-    bgImage: "https://www.floralparkhvac.com/",
+    bgImage: "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4333.jpg.webp",
     title: "Our Services",
     description: (
       <p>

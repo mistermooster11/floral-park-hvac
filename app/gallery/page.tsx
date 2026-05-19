@@ -11,9 +11,8 @@ const galleryItems = [
     label: "Central AC Install — Floral Park, Nassau County",
     beforeAlt: "Old AC condenser before replacement",
     afterAlt:  "New AC condenser fully installed and running",
-    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
-    before: "/images/IMG_9688-1024x682.jpg",
-    after:  "/images/IMG_9750-1024x683.jpg",
+    before: "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4336.jpg.webp",
+    after:  "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4333.jpg.webp",
     category: "AC Installation",
   },
   {
@@ -21,9 +20,8 @@ const galleryItems = [
     label: "Boiler Replacement — New Hyde Park",
     beforeAlt: "Old boiler removed prior to replacement",
     afterAlt:  "New Burnham boiler fully installed",
-    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
-    before: "/images/IMG_9750-1024x683.jpg",
-    after:  "/images/iStock-530983109-1.jpg",
+    before: "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4341.jpg.webp",
+    after:  "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_4335-1-edited.jpg.webp",
     category: "Boiler",
   },
   {
@@ -31,9 +29,8 @@ const galleryItems = [
     label: "Mini Split Install — Finished Basement, Nassau County",
     beforeAlt: "Unfinished space before mini split install",
     afterAlt:  "Wall-mounted mini split installed and running",
-    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
-    before: "/images/iStock-530983109-1.jpg",
-    after:  "/images/IMG_9688-1024x682.jpg",
+    before: "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_1870-1024x768.jpg.webp",
+    after:  "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_1188-768x1024.jpg.webp",
     category: "Mini Split",
   },
   {
@@ -41,9 +38,8 @@ const galleryItems = [
     label: "Full System Replacement — Western Suffolk",
     beforeAlt: "Aging HVAC system before full replacement",
     afterAlt:  "Complete new HVAC system installed and operational",
-    // [TODO: Replace with real before/after job photos from Floral Park HVAC]
-    before: "/images/IMG_9688-1024x682.jpg",
-    after:  "/images/IMG_9750-1024x683.jpg",
+    before: "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/IMG_0426-768x1024.jpg.webp",
+    after:  "https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/1000019661-1024x768.jpg.webp",
     category: "System Replacement",
   },
 ];

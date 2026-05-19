@@ -39,7 +39,7 @@ export default function Announcements() {
               <span
                 style={{
                   backgroundImage:
-                    'url(https://www.floralparkhvac.com/) no-repeat center center / cover',
+                    'url(https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/1000019656-scaled.jpg.webp)',
                   backgroundRepeat: 'no-repeat',
                   backgroundPosition: '50% 50%',
                   backgroundSize: 'cover',

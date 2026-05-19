@@ -16,7 +16,7 @@ const floralparkhvac: ChannelPageData = {
     title:           "HVAC Specialists — Nassau County & Queens",
     breadcrumbLabel: "About Us",
     imageBg:
-      "url(https://www.floralparkhvac.com/) no-repeat center center / cover",
+      "url(https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/IMG_0322-2.jpeg.webp) no-repeat center center / cover",
     description: (
       <p>
         Floral Park HVAC is a licensed, insured, and bonded HVAC company

@@ -36,10 +36,10 @@ export default function ContactClient() {
     <main className="pt-76 max-[1150px]:pt-[6.2rem]">
 
       {/* ── Hero ── */}
-      {/* [TODO: Replace bgImage with a real Floral Park HVAC photo] */}
+      {/* Hero background — real Floral Park HVAC job site photo */}
       <CraftHero
         title="Contact Us"
-        bgImage="/images/IMG_9688-1024x682.jpg"
+        bgImage="https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2026/01/IMG_1870-1024x768.jpg.webp"
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 
