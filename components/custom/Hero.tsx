@@ -108,12 +108,13 @@ export default function Hero() {
                   visible ? 'h-full scale-100' : 'h-0 scale-[1.2]',
                 ].join(' ')}
               >
-                {/* Floral Park HVAC — hero image */}
-                <img
-                  src="https://www.floralparkhvac.com/wp-content/uploads/cwv-webp-images/2025/12/IMG_4283-scaled.jpg.webp"
-                  alt="Floral Park HVAC technician on the job"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none object-cover"
-                  loading="eager"
+                {/* Floral Park HVAC — hero video */}
+                <iframe
+                  src="https://customer-ip9lnkk65px0t3ak.cloudflarestream.com/82d74eed6c3e1cebb9b01d88b1780193/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto max-w-none border-0"
+                  style={{ aspectRatio: '16/9', minWidth: '100%', minHeight: '100%' }}
                 />
               </div>
             </div>
