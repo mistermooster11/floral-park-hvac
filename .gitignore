@@ -40,8 +40,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# download
+# dowloaded
 /downloaded
 
-# nested template copy (not part of this project)
-/PipeMonkey-Redesign
+#docs
+/docs
+
+# claude worktrees
+.claude/

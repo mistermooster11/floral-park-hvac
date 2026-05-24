@@ -1,266 +1,306 @@
-# Template Map: NCCER Clone (v1)
-**Framework**: Next.js 14 App Router  
-**Styling**: Tailwind CSS v4 + custom CSS (styles/)  
-**Package Manager**: pnpm  
-**Architecture**: Hybrid — primary client content lives in `/data/` files (data-driven); homepage sections and FAQ/contact pages are hardcoded inline in components  
-**Last Mapped**: May 2026  
-**First Client Built**: Pipe Monkeys (drain & sewer, Brooklyn/Queens/Nassau)
+# Template Map: Unclog
+**Framework**: Next.js 16 (React 19) App Router  
+**Styling**: Tailwind CSS v4 + custom CSS (`styles/homepage.css`, `styles/inner-pages.css`, `styles/common.css`)  
+**Animations**: GSAP (lazily imported — loads on client only)  
+**Architecture**: Mixed — partially data-driven (`/data/` folder handles testimonials, FAQ, pricing, blog, services, nav), partially hardcoded (Hero copy, Header phone, About copy, CTA copy, all service detail page props)  
+**Package Manager**: npm (use `npm install` and `npm run dev`)  
+**Last Mapped**: 2026-05-23
 
 ---
 
 ## Quick Reference
 
-This template separates client content into `/data/` files typed as TypeScript objects. The most data-driven page is `/explore/[slug]` (About Us), which pulls entirely from `data/channel/[slug].tsx`. The services catalog and service detail pages are also fully data-driven. However, the homepage sections (Hero, Announcements, Difference, Testimonial) and the FAQs/Contact pages contain hardcoded inline content that requires direct component edits.
-
-**The key insight for repositioning:** Edit data files first (lowest risk, highest leverage), then work through the hardcoded component list. Register every new client in `data/channel/index.ts` or the About Us page will 404.
-
-**Known TypeScript gotcha:** When simplifying `mainNavItems.ts` to flat links (no dropdowns), you must export the array as `MainNavItem[]` with an explicit type definition in the same file. Without this, `MobileNav.tsx` throws a TS build error. See the TS Notes section below.
+This template has a `/data/` folder with 10 TypeScript files that handle the most frequently swapped content — services, testimonials, FAQ, pricing, blog posts, and nav links. However, several high-visibility sections are still hardcoded inline: the Hero headline and video, the Header phone number, the About section copy, the CTA section copy, and all 5 service detail pages (which pass their content as component props). Repositioning requires editing both the data files (fast) and a targeted list of components and page files (moderate effort). No index registry file is needed — each page is its own static route.
 
 ---
 
 ## Pages & Routes
 
-| Route | Purpose | Data File | Inline Content? |
-|-------|---------|-----------|----------------|
-| `/` | Homepage | None — composed of components | Yes — Hero, Announcements, Difference, Testimonial sections all hardcoded |
-| `/explore/[slug]` | About Us | `data/channel/[slug].tsx` | No — fully data-driven |
-| `/craft-catalog` | Services catalog with filter | `data/craft-catalog/crafts.ts` | Minimal |
-| `/craft-catalog/[slug]` | Individual service detail | `data/pipeline-corrosion-control.ts` (example) | No — data-driven, but only one example page exists |
-| `/programs-crafts/programs` | Service detail list (cards) | `data/programs.tsx` | No — fully data-driven |
-| `/general-faqs` | FAQs accordion | None | Yes — all FAQ items are inline arrays in the page file |
-| `/contact-us` | Contact + service areas | None | Yes — service area cards are inline in the page file |
-| `/gallery` | Before/After gallery | None | Yes — gallery items array inline in page file |
-| `/service-areas` | Regional landing pages | None | Yes — area data inline in page file |
-| `/blog` | Blog post index | None | Yes — post array inline in page file |
-
-**Dynamic route note:** `/explore/[slug]` — the slug must match a key registered in `data/channel/index.ts`. Missing registration = 404.
-
-**New pages added for trade clients (not in original template):**
-- `/gallery` — Before/After grid
-- `/service-areas` — Regional landing sections  
-- `/blog` — Content marketing index
+| Route | Purpose | Data Source | Hardcoded Content? |
+|-------|---------|-------------|-------------------|
+| `/` | Homepage | Components pull from data files | Yes — Hero H1, description, video, CTA section copy, About copy, NeedServices copy |
+| `/about-us` | About Us | `data/about.ts` (why-choose bullets) | Yes — About heading, 2 body paragraphs, FleetSection copy + images |
+| `/contact-us` | Contact form + map | None | Yes — Google Maps embed URL, page metadata |
+| `/faq` | FAQs | `data/faq.ts` | Minimal — PageHeroSection title/subtitle only |
+| `/services-page` | Services overview | `data/services.ts` | Minimal — PageHeroSection title/subtitle only |
+| `/blog-unclogme` | Blog listing | `data/blog.ts` | Minimal — PageHeroSection title/subtitle only |
+| `/residential-unclogging` | Service detail | Page props (hardcoded inline) | Yes — heading, intro, whatWeDo, whyChooseUs bullets, metadata |
+| `/commercial-unclogging` | Service detail | Page props (hardcoded inline) | Yes — same as above |
+| `/camera-inspection` | Service detail | Page props (hardcoded inline) | Yes — same as above |
+| `/grease-trap-cleaning` | Service detail | Page props (hardcoded inline) | Yes — same as above |
+| `/recurring-grease-trap-cleaning-maintenance` | Service detail | Page props (hardcoded inline) | Yes — same as above |
+| `/become-an-unclogger` | Careers/hiring page | `data/become.ts` | Yes — BecomeSection copy (rename or remove for most clients) |
 
 ---
 
 ## Data Files — Content Slots
 
-### `data/channel/[client-slug].tsx`
-_Primary about-us and homepage channel data. One file per client._  
-_Type: `ChannelPageData` (defined in `components/custom/channel/types.ts`)_
+### `data/nav.ts`
+_Controls main nav (header dropdown) and both footer link columns._
 
-| Field | Type | Required | Notes |
-|-------|------|----------|-------|
-| `slug` | string | ✅ | URL key — must match registration in index.ts |
-| `navItems[]` | `{href, label}[]` | ✅ | In-page anchor nav links for the About Us page |
-| `hero.title` | string | ✅ | Page H1 |
-| `hero.breadcrumbLabel` | string | ✅ | Breadcrumb text |
-| `hero.imageBg` | string | ✅ | Full CSS background string e.g. `url(...) no-repeat center/cover` |
-| `hero.description` | ReactNode | ✅ | 1–2 sentence intro `<p>` |
-| `learnMore.title` | string | ✅ | About section headline |
-| `learnMore.content` | ReactNode | ✅ | 3–5 paragraphs; can include `<h5>` subheads |
-| `resources.title` | string | ✅ | Quick links section heading |
-| `resources.resources[]` | array | ✅ | Each: `{title, href, icon}` — icon is icomoon class string |
-| `crafts.description` | ReactNode | ✅ | Intro above the service links |
-| `crafts.craftLinks[]` | array | ✅ | Each: `{label, href}` — links to service pages |
-| `testimonials.videos[]` | array | ⬜ | Video testimonial objects — use `[]` if none |
-| `testimonials.quote` | object | ✅ | `{text, name, position}` |
-| `flexFeature.imageSrc` | string | ✅ | Feature section photo URL |
-| `flexFeature.title` | string | ✅ | Feature section headline |
-| `flexFeature.body` | ReactNode | ✅ | 1–2 sentence body `<p>` |
-| `flexFeature.buttonLabel` | string | ✅ | CTA button text |
-| `flexFeature.buttonHref` | string | ✅ | CTA link (usually `tel:` or `/contact-us`) |
-| `getInTouch.body` | ReactNode | ✅ | Contact CTA paragraph |
-| `getInTouch.buttonLabel` | string | ✅ | Button text |
-| `getInTouch.buttonHref` | string | ✅ | Button link |
+| Export | Type | Notes |
+|--------|------|-------|
+| `navItems` | `NavItem[]` | Main nav. Each item has `label`, `href`, optional `children[]` for dropdown |
+| `quickLinks` | `FooterLink[]` | Footer "Quick Links" column |
+| `servicesLinks` | `FooterLink[]` | Footer "Our Services" column |
 
-**Register in**: `data/channel/index.ts` — add import and add key to `channelDataMap`
+**To update nav**: Edit `navItems` array. Flatten the structure (remove `children`) for simple trade clients.  
+**Footer links**: Update `quickLinks` and `servicesLinks` to match the client's actual pages.
 
 ---
 
-### `data/craft-catalog/crafts.ts`
-_Drives the services catalog page and its filter bar._
+### `data/services.ts`
+_Drives the homepage Services grid and service detail sidebar._
+
+| Export | Type | Fields | Notes |
+|--------|------|--------|-------|
+| `services` | `Service[]` | `number`, `title`, `image`, `href`, `width`, `height` | 4 service cards on homepage. `number` is decorative ("01"–"04") |
+| `sidebarServices` | `SidebarService[]` | `label`, `href` | Sidebar nav on all service detail pages |
+
+**Note**: `ServiceDetailSection.tsx` also has a **hardcoded `SIDEBAR_SERVICES` array** inside the component that duplicates `sidebarServices`. Update both when adding/removing services.
+
+---
+
+### `data/testimonials.ts`
+_Drives `TestimonialsSection` — shown on homepage and most inner pages._
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `crafts[]` | `CraftItem[]` | Each: `slug, title, categories[], disciplines[], hasAssessment, hasTranslation` |
-| `CATEGORIES` | const array | Filter tab labels — first item should be "All Categories" |
-| `DISCIPLINES` | const array | Secondary filter labels — first item should be "All Disciplines" |
+| `name` | `string` | Reviewer name |
+| `rating` | `number` | Stars (1–5) |
+| `text` | `string` | Review body |
+| `avatar` | `string` | URL — typically a Google avatar URL. Replace with `/images/avatar-*.png` for local images |
 
-**Trade client example categories**: `["All Categories", "Drain Cleaning", "Advanced Services", "Commercial"]`
+**Minimum**: 3 reviews. **Ideal**: 5–6 for carousel variety.
 
 ---
 
-### `data/programs.tsx`
-_Drives the service detail list page at `/programs-crafts/programs`._  
-_Type: `ProgramsPageData`_
+### `data/faq.ts`
+_Drives `FAQSection` on homepage and the `/faq` page._
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `navItems[]` | `{href, label}[]` | In-page anchor nav |
-| `hero.title` | string | Page H1 |
-| `hero.bgImage` | string | Hero background URL |
-| `hero.description` | ReactNode | Intro paragraph |
-| `hero.breadcrumbParentLabel` | string | Breadcrumb parent text |
-| `hero.breadcrumbParentHref` | string | Breadcrumb parent link |
-| `overview.content` | ReactNode | Copy above the service cards |
-| `overview.quickLinks[]` | array | Each: `{label, href, icon}` |
-| `programs[]` | `ProgramItem[]` | Each: `{title, content ReactNode, learnMoreHref}` |
-| `partners[]` | `PartnerItem[]` | Logo grid — use `[]` if no partners |
+| `q` | `string` | Question |
+| `a` | `string` | Answer (plain text only, no JSX) |
+
+**Typical count**: 4–6 items. Keep answers short — 2–3 sentences max for the accordion layout.
 
 ---
 
-### `lib/constants/mainNavItems.ts`
-_Controls the main desktop nav and mobile nav._
+### `data/pricing.ts`
+_Drives `PricingSection` — shown on homepage and service detail pages._
 
-Default for trade clients — flat 4-item nav (no dropdowns):
-```ts
-export type MainNavItem = {
-  label: string;
-  href?: string | null;
-  external?: boolean;
-  dropdown?: NavDropdown | null; // NavDropdown type defined in same file
-};
+| Field | Type | Notes |
+|-------|------|-------|
+| `price` | `number` | Numeric price (displayed as `$XXX`) |
+| `note` | `string` | Below-price note (e.g., "No hidden fees") |
+| `title` | `string` | Package name |
+| `features` | `string[]` | Bullet list of included items |
+| `description` | `string` | Short descriptive copy (supports `\n\n` for line breaks) |
+| `highlight?` | `boolean` | Renders card with accent color border as the "featured" plan |
 
-export const mainNavItems: MainNavItem[] = [
-  { label: "Home",     href: "/" },
-  { label: "Services", href: "/craft-catalog" },
-  { label: "FAQs",     href: "/general-faqs" },
-  { label: "Contact",  href: "/contact-us" },
-];
-```
-
-**⚠️ TypeScript Note:** Do NOT use `dropdown: null` in items — TypeScript narrows the type to `never`, breaking `MobileNav.tsx`. Instead, omit the `dropdown` property entirely and export as `MainNavItem[]` with an explicit type that includes `dropdown?: NavDropdown | null`. See full type definition above.
+**Typical count**: 3–4 pricing cards. Not all trade businesses use public pricing — remove `PricingSection` from page imports if client doesn't want prices shown.
 
 ---
 
-### `lib/constants/AccordionItems.tsx`
-_Feeds the `Insights` component (tabbed accordion on homepage)._  
-Remove the `<Insights />` import from `app/page.tsx` for trade clients — this section is not applicable.
+### `data/blog.ts`
+_Drives `BlogSection` on homepage and the `/blog-unclogme` page._
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `slug` | `string` | Full URL path (e.g., `/2026/02/02/post-slug/`) |
+| `image` | `string` | Card image path — store in `/public/images/` |
+| `date` | `string` | Day number as string ("02") |
+| `monthYear` | `string` | Display string ("Feb '26") |
+| `category` | `string` | Display category label |
+| `categoryHref` | `string` | Category URL |
+| `title` | `string` | Post title |
+| `excerpt` | `string` | 1–2 sentence preview |
+
+**Note**: This template does not have individual blog post pages — slugs can link to an external blog or CMS. If the client doesn't have a blog, remove `BlogSection` from `app/page.tsx` imports.
+
+---
+
+### `data/about.ts`
+_Provides the bullet list in the "Why Choose Us" portion of `AboutSection`._
+
+| Export | Type | Notes |
+|--------|------|-------|
+| `whyChooseUs` | `string[]` | 3–5 short bullet strings. Rendered with check icons. |
+
+**Note**: The About section heading, body paragraphs, and years-of-experience stat are hardcoded in `AboutSection.tsx` itself.
+
+---
+
+### `data/ticker.ts`
+_Drives the `MarqueeTicker` scrolling banner below the Hero._
+
+| Export | Type | Notes |
+|--------|------|-------|
+| `tickerItems` | `string[]` | Short labels that scroll continuously. 6–10 items ideal. |
+
+---
+
+### `data/why-choose.ts`
+_Drives `WhyChooseSection` (shown on the About Us page)._
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `title` | `string` | Card heading (e.g., "Quality Service") |
+| `text` | `string` | 1–2 sentences of supporting copy |
+
+**Typical count**: 6 cards (2×3 grid).
+
+---
+
+### `data/become.ts`
+_Drives `BecomeSection` on the `/become-an-unclogger` page._
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `num` | `string` | Decorative number ("01"–"04") |
+| `title` | `string` | Benefit heading |
+| `text` | `string` | 1–2 sentence description |
+
+**For most clients**: Rename this page to `/careers` or remove it entirely. Update `data/nav.ts` to remove the nav entry.
 
 ---
 
 ## Hardcoded Components (Require Direct Editing)
 
-| Component | What to Change | Effort |
-|-----------|---------------|--------|
-| `components/custom/Hero.tsx` | Headline, subhead, CTA label + href, background image/video | Medium |
-| `components/custom/header/Topnav.tsx` | Left utility bar — replace NCCER links with phone number | Low |
-| `components/custom/Footer.tsx` | Quick links array, contact widget, service areas widget, socials, copyright | Low |
-| `components/custom/Announcements.tsx` | Section headline, body copy (3 steps), image URL, CTA button | Medium |
-| `components/custom/Difference.tsx` | Stats array (3 items), section headline, photo URL | Medium |
-| `components/custom/Testimonial.tsx` | Quote array or video array | Medium |
-| `app/page.tsx` | Which sections to include — remove Insights, Donation, Research, News for trade clients | Low |
-| `app/general-faqs/page.tsx` | `faqItems[]` array — all 6–8 FAQs are inline | Medium |
-| `app/contact-us/page.tsx` | `serviceAreas[]` array — area cards are inline | Medium |
-| `app/gallery/page.tsx` | `galleryItems[]` array — all job cards inline | Medium |
-| `app/service-areas/page.tsx` | `areas[]` array — all regional sections inline | Medium |
-| `app/blog/page.tsx` | `posts[]` array — all post entries inline | Low |
+| Component / File | What to Change | Effort |
+|-----------------|---------------|--------|
+| `components/custom/hero/HeroSection.tsx` | H1 text (lines 73–78), description paragraph (lines 83–89), button hrefs (lines 92–97), video `src` URL (line 65), poster image (line 62) | **High** — video URL must be replaced with client video or removed |
+| `components/custom/header/Header.tsx` | Phone number `href` + display text (line 54–58), topbar item labels (line 40, 49), logo `src` (line 69) | **Low** |
+| `components/custom/footer/Footer.tsx` | Logo `src` (line 13), brand description paragraph (lines 21–24), social `href` links (lines 27–41), copyright text (line 78), legal link hrefs (lines 81–82) | **Low** |
+| `components/custom/about/AboutSection.tsx` | About heading (lines 43–45), 2 body paragraphs (lines 47–54), years-of-experience stat (line 101), about image `src` (line 84) | **Medium** |
+| `components/custom/cta/CTAFormSection.tsx` | Eyebrow (line 66), heading (lines 67–70), subtext (lines 73–76), `WHY_LEFT` array (lines 48–53), `WHY_RIGHT` array (lines 54–59), right-panel heading + paragraphs (lines 143–150) | **Medium** |
+| `components/custom/need-services/NeedServicesSection.tsx` | Heading (lines 33–34), paragraph (lines 37–39), button href (line 41) | **Low** |
+| `components/custom/fleet/FleetSection.tsx` | Fleet heading (line 42), intro paragraph (lines 44–50), 3 truck image `src` paths (lines 55–75) — currently uses `/wp-assets/` images that must be replaced | **Medium** |
+| `components/custom/service-detail/ServiceDetailSection.tsx` | `SIDEBAR_SERVICES` hardcoded array (lines 24–30) — must match `data/services.ts` entries | **Low** |
+| `app/layout.tsx` | Default site `title` and `description` metadata (lines 13–15) | **Low** |
+| `app/contact-us/page.tsx` | Google Maps `src` embed URL (line 27), page `metadata` title + description | **Low** |
+| Each service `page.tsx` (×5) | `PageHeroSection` title + subtitle, `ServiceDetailSection` heading + `intro[]` + `whatWeDo[]` + `whyChooseUs[]`, page `metadata` title + description | **Medium per page** |
 
 ---
 
 ## Navigation
 
-- **Main nav file**: `lib/constants/mainNavItems.ts`
-- **Template default**: 7-item mega-dropdown NCCER nav — **always replace for trade clients**
-- **Recommended for trade clients**: 4–5 flat items, no dropdowns
-- **Standard trade nav**: `Home | Services | FAQs | Contact` (add `Service Areas` if regional coverage is a key selling point)
-- **Mobile nav file**: `components/custom/header/MobileNav.tsx` — reads from same `mainNavItems`
-- **Desktop nav file**: `components/custom/header/Navbar.tsx` — also reads from `mainNavItems`
-- **TS requirement**: Must export `mainNavItems` as `MainNavItem[]` — see TS note above
+- **Main nav file**: `data/nav.ts` → `navItems`
+- **Nav type**: 2-level dropdown (label + optional `children[]` array for sub-items)
+- **Current structure**: 5 top-level items — Homepage, About (×2 children), Services (×4 children), Blog, Contact (×2 children)
+- **Recommended for trade clients**: Simplify to 4–5 flat items, no dropdowns. Suggested: `[Home, Services, About, Blog, Contact]`
+- **Mobile nav**: `components/custom/header/NavMenu.tsx` — reads the same `navItems` export
+- **Footer nav**: Also from `data/nav.ts` — update `quickLinks` and `servicesLinks` to match final nav structure
 
 ---
 
 ## Image Slots
 
-| Slot | File | Notes |
-|------|------|-------|
-| Hero background video/image | `components/custom/Hero.tsx` | Video preferred; falls back to image |
-| About Us hero | `data/channel/[client].tsx → hero.imageBg` | Full CSS background string |
-| Feature section photo | `components/custom/Announcements.tsx` | Left-column image |
-| Stats/trust section photo | `components/custom/Difference.tsx` | Right-column photo |
-| Emergency CTA image | `data/channel/[client].tsx → flexFeature.imageSrc` | Full URL |
-| Logo (mobile header) | `components/custom/header/MobileNav.tsx` + `Topnav.tsx` | `/logos/logo-94.svg` |
-| Logo (footer) | `components/custom/Footer.tsx` | `/logos/logo-long.svg` |
-| Gallery job photos | `app/gallery/page.tsx → galleryItems[].before/.after` | Before/After pairs per job |
-
-**Placeholder strategy:** When client hasn't provided images, use `[TODO: Replace with X photo]` comment and set `backgroundColor: '#101d2b'` as a dark fallback.
-
----
-
-## Sections to REMOVE for Trade Clients
-
-These homepage sections are NCCER-specific and should be excluded (`app/page.tsx`):
-
-| Component | Why Remove |
-|-----------|------------|
-| `<Insights />` | Tabbed org accordion — NCCER-specific |
-| `<Donation />` | Nonprofit donation widget — not applicable |
-| `<Research />` | Research publications — not applicable |
-| `<News />` | NCCER newsroom — not applicable |
-
-**Resulting homepage for trade clients**: `<Hero /> → <HomeSectionWithLine /> → <Testimonial />`  
-(`HomeSectionWithLine` wraps `Announcements` + `Difference` with a decorative line element)
+| Slot | File | Current Asset | Action Required |
+|------|------|--------------|-----------------|
+| Hero video | `HeroSection.tsx` line 65 | External URL: `unclogme.com/wp-content/...mp4` | **Replace** — upload client video to `/public/videos/` or use a still image fallback |
+| Hero video poster | `HeroSection.tsx` line 62 | `/wp-assets/Title-Background-Image-scaled.webp` | **Replace** with client hero image |
+| Header logo | `Header.tsx` line 69 | `/logo.png` (200×44) | **Replace** with client logo |
+| Footer logo | `Footer.tsx` line 13 | `/images/logo-image-50.png` (239×58) | **Replace** with client logo |
+| About section photo | `AboutSection.tsx` line 84 | `/images/about-row.webp` (690×613) | **Replace** with client team/work photo |
+| About decoration icon | `AboutSection.tsx` line 94 | `/images/vector-decoration.svg` | Optional — keep or replace with client-appropriate icon |
+| Service card image 1 | `data/services.ts` line 29 | `/images/service-1.png` (535×643) | **Replace** with client service photo |
+| Service card image 2 | `data/services.ts` line 36 | `/images/service-2.png` (535×643) | **Replace** |
+| Service card image 3 | `data/services.ts` line 43 | `/images/service-3.webp` (535×643) | **Replace** |
+| Service card image 4 | `data/services.ts` line 50 | `/images/service-4.webp` (535×643) | **Replace** |
+| Service detail sidebar | Each service `page.tsx` | Same service images | **Same files as above** — already linked via page props |
+| Fleet truck 1 | `FleetSection.tsx` line 55 | `/wp-assets/About-Row-IMG-1.webp` | **Replace** with client truck/equipment photo |
+| Fleet truck 2 | `FleetSection.tsx` line 63 | `/wp-assets/Truck-Example-2.webp` | **Replace** |
+| Fleet truck 3 | `FleetSection.tsx` line 71 | `/wp-assets/Truck-Example-3.webp` | **Replace** |
+| Blog post image 1 | `data/blog.ts` | `/images/blog-3.png` | **Replace** with client blog images or stock photos |
+| Blog post image 2 | `data/blog.ts` | `/images/blog-2.png` | **Replace** |
+| CTA background | `styles/homepage.css` (referenced via CSS) | `/images/cta-bg.png` | **Replace** if different background desired |
+| Testimonial avatars | `data/testimonials.ts` | External Google avatar URLs | **Replace** with `/images/avatar-name.png` or leave as URLs if Google-sourced |
 
 ---
 
-## Conceptual Remapping (NCCER → Trade Business)
+## Pages Not Included (Commonly Needed for Trade Clients)
 
-| NCCER Concept | Trade Business Equivalent |
-|--------------|--------------------------|
-| Crafts & Programs | Services offered |
-| Explore / Organizations | About Us |
-| Credentials / Certifications | Licenses & certifications |
-| Find a Center | Service area / coverage |
-| Donate | Contact / Book service |
-| Career Pathways | (Remove — not applicable) |
-| Research | (Remove — not applicable) |
-| Newsroom | Blog (optional) |
-| NCCER Number | (Remove entirely) |
-
----
-
-## TypeScript Notes (Known Build Issues)
-
-1. **`mainNavItems` type** — must use explicit `MainNavItem[]` annotation with `dropdown?: NavDropdown | null`. Using `dropdown: null` causes `MobileNav.tsx:118` to throw `Property 'titleHref' does not exist on type 'never'`. Omitting dropdown entirely causes `MobileNav.tsx:60` to throw `Property 'dropdown' does not exist`. Solution: explicit type with optional dropdown.
-
-2. **`NavDropdown.description`** — must be `description: string` (required), not `description?: string` (optional). `NavItem.tsx` expects it required, so making it optional causes an assignability error at `Navbar.tsx:32`.
+| Page | Path | When to Add |
+|------|------|-------------|
+| Before/After Gallery | `/gallery` | Always recommended — strong trust signal |
+| Service Areas | `/service-areas` | When client covers multiple distinct cities/regions |
+| Privacy Policy | `/privacy-policy` | Required for GDPR / contact form compliance |
+| Thank You / Confirmation | `/thank-you` | After form submission — improves conversion tracking |
 
 ---
 
 ## Repositioning Checklist
 
-Use this for every new client build on the NCCER Clone template:
+Use this checklist for every client build on the Unclog template.
 
-**Data files — start here:**
-- [ ] Create `data/channel/[client-slug].tsx` using `ChannelPageData` type
-- [ ] Register client in `data/channel/index.ts`
-- [ ] Edit `data/craft-catalog/crafts.ts` — replace service list + CATEGORIES + DISCIPLINES
-- [ ] Edit `data/programs.tsx` — replace service detail cards + hero + overview
+### Phase 1 — Data Files (start here, lowest risk)
+- [ ] `data/nav.ts` — Update `navItems` (simplify to flat nav), `quickLinks`, `servicesLinks` to match client's pages and services
+- [ ] `data/services.ts` — Replace service titles, hrefs, and image paths for client's actual services. Also update `sidebarServices[]`
+- [ ] `data/testimonials.ts` — Replace all reviews with client's real Google/Yelp reviews. Use real avatar URLs or download and store locally
+- [ ] `data/faq.ts` — Replace all FAQ items with trade-appropriate Q&A for client
+- [ ] `data/pricing.ts` — Replace pricing cards with client's packages, or remove `PricingSection` from page imports if client doesn't advertise prices
+- [ ] `data/blog.ts` — Replace with client's blog posts, or remove `BlogSection` from `app/page.tsx` if no blog
+- [ ] `data/about.ts` — Replace `whyChooseUs[]` bullets with client-specific differentiators
+- [ ] `data/ticker.ts` — Replace scrolling labels with client's services and credentials
+- [ ] `data/why-choose.ts` — Replace 6 cards with client's actual USPs
+- [ ] `data/become.ts` — Replace benefits, OR skip if removing the `/become-an-unclogger` page
 
-**Constants:**
-- [ ] Edit `lib/constants/mainNavItems.ts` — flat 4–5 item nav, export as `MainNavItem[]`
+### Phase 2 — Global Layout & Identity
+- [ ] `app/layout.tsx` — Update default site `title` and `description` metadata (site-wide fallback)
+- [ ] `components/custom/header/Header.tsx` — Replace phone number (both `href` and display text), update topbar items, swap logo `src`
+- [ ] `components/custom/footer/Footer.tsx` — Swap logo `src`, rewrite brand description, update social link `href`s, update copyright text and legal link hrefs
 
-**Hardcoded components:**
-- [ ] Edit `components/custom/Hero.tsx` — headline, subhead, CTA
-- [ ] Edit `components/custom/header/Topnav.tsx` — phone number bar
-- [ ] Edit `components/custom/Footer.tsx` — links, contact info, socials
-- [ ] Edit `components/custom/Announcements.tsx` — How It Works / feature section
-- [ ] Edit `components/custom/Difference.tsx` — trust stats
-- [ ] Edit `components/custom/Testimonial.tsx` — client testimonials
-- [ ] Edit `app/page.tsx` — remove Insights, Donation, Research, News
+### Phase 3 — Homepage Sections
+- [ ] `components/custom/hero/HeroSection.tsx` — Rewrite H1, description, button hrefs. **Replace video `src`** with client video (upload to `/public/videos/hero.mp4`) and update poster image. If no video: swap `<video>` for `<Image>` with a full-bleed hero photo
+- [ ] `components/custom/about/AboutSection.tsx` — Rewrite About heading, 2 body paragraphs, update years-of-experience stat, replace about image
+- [ ] `components/custom/cta/CTAFormSection.tsx` — Update eyebrow, heading, subtext, `WHY_LEFT` and `WHY_RIGHT` arrays, right-panel heading and paragraphs
+- [ ] `components/custom/need-services/NeedServicesSection.tsx` — Update heading and paragraph to match client's trade + city
 
-**Inline pages:**
-- [ ] Edit `app/general-faqs/page.tsx` — 6–8 trade-specific FAQs
-- [ ] Edit `app/contact-us/page.tsx` — service area cards + form
+### Phase 4 — Inner Pages
+- [ ] `components/custom/fleet/FleetSection.tsx` — Rewrite fleet heading and intro paragraph. **Replace all 3 `/wp-assets/` truck image `src` paths** with client photos or library images
+- [ ] `components/custom/service-detail/ServiceDetailSection.tsx` — Update `SIDEBAR_SERVICES` hardcoded array to match final service list
+- [ ] `app/contact-us/page.tsx` — Replace Google Maps embed `src` with client's actual business address map URL. Update page metadata
+- [ ] Each service `page.tsx` (×number of client services):
+  - Update `PageHeroSection` title + subtitle
+  - Update `ServiceDetailSection` props: `heading`, `intro[]`, `whatWeDo[]`, `whyChooseUs[]`, `sidebarImage`
+  - Update `metadata` title + description
+  - **Delete service pages the client doesn't offer** (e.g., remove grease trap pages for a residential plumber)
+- [ ] `/become-an-unclogger` — Rename to `/careers` or delete the folder. Update nav in `data/nav.ts`
 
-**New pages (confirm with client/workflow before adding):**
-- [ ] Create `app/gallery/page.tsx` — before/after grid
-- [ ] Create `app/service-areas/page.tsx` — regional landing sections
-- [ ] Create `app/blog/page.tsx` — content index
+### Phase 5 — Images
+- [ ] Replace all `/wp-assets/` images (Hero poster, Fleet trucks) — these are UnclogMe-specific
+- [ ] Replace service card images (4× in `data/services.ts` + same in service pages)
+- [ ] Replace About photo (`/images/about-row.webp`)
+- [ ] Replace both logo files (`/logo.png` and `/images/logo-image-50.png`)
+- [ ] Replace or remove blog images
+- [ ] Run image-library-matcher skill for any remaining `[TODO: Replace with...]` gaps
 
-**Before shipping:**
-- [ ] All phone numbers match prospect's actual number
-- [ ] No NCCER content anywhere in the build
-- [ ] All image slots have real images or `[TODO]` comments
-- [ ] TypeScript builds without errors (check TS Notes section above)
-- [ ] `CONTENT-BRIEF.md` is complete
+### Phase 6 — Quality Check
+- [ ] All phone numbers show client's actual number (Header topbar, Footer, CTA section, contact page)
+- [ ] All service names match client's actual offerings
+- [ ] No "UnclogMe," "Miami-Dade," or "Aaron" references remain (unless client is in that area)
+- [ ] No `/wp-assets/` image references remain in any component
+- [ ] Video `src` is either a local file or a client-controlled CDN URL (not `unclogme.com` domain)
+- [ ] Google Maps URL shows client's actual business address
+- [ ] `npm run build` passes with zero TypeScript errors
+- [ ] All removed service pages are also removed from `data/nav.ts`, `data/services.ts`, and `ServiceDetailSection.tsx` SIDEBAR_SERVICES
+
+---
+
+## Conceptual Remapping
+
+_This template was built for a Miami-Dade drain unclogging and grease trap business. When repositioning to other trades:_
+
+| Unclog Template Concept | Other Trade Equivalent |
+|------------------------|----------------------|
+| Drain unclogging services | Any residential/commercial service (HVAC tune-up, roof repair, etc.) |
+| Grease trap cleaning | Specialty commercial service (preventive maintenance contracts) |
+| Camera inspection | Diagnostic/assessment service (electrical inspection, home energy audit) |
+| "Become an Unclogger" page | Careers page (rename) or delete entirely |
+| Fleet section (trucks) | Equipment section — reframe as "Our Equipment" for any service vehicle biz |
+| Miami-Dade / Broward / Palm Beach | Replace with client's actual service area throughout |
+| "24/7 emergency" messaging | Adjust to client's actual availability (not all trades are 24/7) |
+| Pricing cards | Works well for trades with package pricing. Remove if client quotes per-job only |
+| "Aaron" references (in stock testimonials) | Replace with real client testimonials |
