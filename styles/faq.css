@@ -45,7 +45,7 @@
   right: 6rem;
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  color: #E5781B;
+  color: #153B7D;
   transition: transform .35s;
 }
 .accordion-title-flex.current { color: #153B7D; }

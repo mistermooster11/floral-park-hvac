@@ -70,7 +70,7 @@ function GalleryCard({ item, delay }: { item: typeof galleryItems[number]; delay
           display: "inline-block",
           marginBottom: "1.5rem",
           padding: "0.4rem 1.2rem",
-          background: "var(--ia-sky, #3CC4FF)",
+          background: "var(--ia-sky, #1AA2DD)",
           borderRadius: "4px",
           fontSize: "1.2rem",
           fontWeight: 600,

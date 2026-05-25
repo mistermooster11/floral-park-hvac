@@ -44,7 +44,7 @@ export default function ContactClient() {
       />
 
       {/* ── Contact Form + Map ── */}
-      <div ref={sectionRef} className={`content-block-flex flex-module fadeIn wow${vis}`}>
+      <div ref={sectionRef} className={`contact-form-section content-block-flex flex-module fadeIn wow${vis}`}>
         <div className="inner inner--slim-1172">
 
           <h2

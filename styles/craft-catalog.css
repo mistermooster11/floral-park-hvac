@@ -230,7 +230,7 @@
 /* sidebar dark variant */
 .side-resources { background: var(--c-navy); padding: 3.5rem 14% 1.5rem; }
 .side-resources .quick-links li {
-  border-top: 1px dashed rgba(60,196,255,.5);
+  border-top: 1px dashed rgba(26,162,221,.5);
   padding: 2rem 0;
   font-size: 1.7rem;
   margin-bottom: 0;
@@ -288,7 +288,7 @@
 .single-craft .craft-snapshot-list {
   padding-top: 2.3rem;
   margin-top: 2.3rem;
-  border-top: 1px dashed #3CC4FF;
+  border-top: 1px dashed #1AA2DD;
 }
 .single-craft .craft-snapshot-list.wide { border-top: 7px solid var(--c-orange); }
 
@@ -351,7 +351,7 @@
   content: "";
   position: absolute;
   left: 99%;
-  background: #3CC4FF;
+  background: #1AA2DD;
   width: 100vw;
   top: 0; bottom: 0;
 }
@@ -374,14 +374,14 @@
 .level-titles {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px dashed #3CC4FF;
+  border-bottom: 1px dashed #1AA2DD;
 }
 .level-title {
   padding: 2.5rem;
   text-align: center;
   font-size: 1.4rem;
   font-weight: 500;
-  color: #3CC4FF;
+  color: #1AA2DD;
   position: relative;
   flex-grow: 1;
   transition: color .35s;
@@ -466,7 +466,7 @@
     white-space: nowrap;
   }
   .level-title::after { display: none; }
-  .level-title.active { background: #3CC4FF; color: #252525; }
+  .level-title.active { background: #1AA2DD; color: #252525; }
   .level-list { padding: 0 0 2.5rem; }
   .level-item-title { display: block; }
   .level-item-title-first { width: auto; margin-right: 0; }
@@ -613,9 +613,9 @@
 /* ── utility color / spacing helpers ─────────────────────── */
 .ia-bg-dark  { background: #153B7D; }
 .ia-bg-soft  { background: #f2f2f2; }
-.ia-bg-sky   { background: #3CC4FF; }
+.ia-bg-sky   { background: #1AA2DD; }
 .ia-white    { color: #fff !important; }
-.ia-sky      { color: #3CC4FF !important; }
+.ia-sky      { color: #1AA2DD !important; }
 .ia-dark     { color: #252525 !important; }
 .ia-margin-0 { margin-bottom: 0 !important; }
 .ia-margin-1 { margin-bottom: 1rem !important; }
@@ -642,7 +642,7 @@
   content: "";
   position: absolute;
   left: 99%;
-  background: #3CC4FF;
+  background: #1AA2DD;
   width: 100vw;
   top: 0; bottom: 0;
 }

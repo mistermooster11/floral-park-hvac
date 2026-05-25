@@ -3,6 +3,14 @@
    Shared with other "flexible page" templates
    ============================================================ */
 
+/* ── Contact form section background ── */
+.contact-form-section {
+  background-image: url("/images/map-1.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 /* ── Breadcrumbs ── */
 .breadcrumbs {
   opacity: 0.7; font-size: 1.1rem; line-height: 1.4; margin-bottom: 2rem;
@@ -10,13 +18,13 @@
 .breadcrumbs > span { margin: 0 0 5px; display: inline-block; }
 .breadcrumbs > em   { margin: 0 5px; display: inline-block; font-style: normal; }
 .breadcrumbs a {
-  color: #3CC4FF; border-bottom: 1px solid #3CC4FF; transition: opacity .35s;
+  color: #1AA2DD; border-bottom: 1px solid #1AA2DD; transition: opacity .35s;
   text-decoration: none;
 }
 .breadcrumbs a:hover { opacity: 0.7; }
 /* on dark bg the breadcrumbs are opaque white */
 .ia-bg-dark .breadcrumbs { opacity: 1; }
-.ia-bg-dark .breadcrumbs a { color: #3CC4FF; border-color: #3CC4FF; }
+.ia-bg-dark .breadcrumbs a { color: #1AA2DD; border-color: #1AA2DD; }
 
 /* ── Sub heading ── */
 .sub-heading {
@@ -88,7 +96,7 @@
 /* Orange left accent bar */
 .user-grid-item-photo::before {
   content: ""; position: absolute; left: 0; top: 0;
-  height: 100%; width: 7px; background: #E5781B;
+  height: 100%; width: 7px; background: #153B7D;
 }
 
 /* Info block */

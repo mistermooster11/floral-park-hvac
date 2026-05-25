@@ -24,7 +24,7 @@ const Logo = ({ isFixed = false, isLoaded = false }: LogoProps) => {
         <span className="sr-only">Floral Park HVAC</span>
         <img
           className="w-full h-full object-contain"
-          src="/logos/Floral_Park_HVAC_Logo.png"
+          src="/logos/Floral_dark_background.png"
           alt="Floral Park HVAC logo"
         />
       </Link>

@@ -9,12 +9,12 @@ interface TopnavProps {
 
 const Topnav = ({ onMobileMenuClick }: TopnavProps) => {
     return (
-        <div className="bg-[#1A1A1A] border-b border-[rgba(60,196,255,.3)] w-full">
+        <div className="bg-[#1A1A1A] border-b border-[rgba(26,162,221,.3)] w-full">
             <div className="inner inner-header flex flex-row items-center justify-between min-h-[4.4rem] p-0">
 
                 {/* Mobile logo */}
                 <Link href="/" className="block lg:hidden float-left" aria-label="Floral Park HVAC">
-                    <img src="/logos/Floral_Park_HVAC_Logo.png" alt="Floral Park HVAC" className="block h-[3.6rem] w-auto object-contain" />
+                    <img src="/logos/Floral_dark_background.png" alt="Floral Park HVAC" className="block h-[3.6rem] w-auto object-contain" />
                 </Link>
 
                 {/* Left: phone number — desktop only */}

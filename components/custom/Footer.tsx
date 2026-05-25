@@ -31,7 +31,7 @@ export default function Footer() {
           <a href="/">
             <span className="sr-only">Floral Park HVAC</span>
             <img
-              src="/logos/Floral_Park_HVAC_Logo.png"
+              src="/logos/Floral_dark_background.png"
               alt="Floral Park HVAC"
               width="220"
               height="80"

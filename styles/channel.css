@@ -85,7 +85,7 @@
   font-size: 1.5rem;
   line-height: 1.53;
   font-weight: 600;
-  border-bottom: 1px solid #E5781B;
+  border-bottom: 1px solid #153B7D;
 }
 .navigation-page li a {
   display: block;
@@ -103,7 +103,7 @@
   bottom: -2px;
   height: 4px;
   width: 0;
-  background: #E5781B;
+  background: #153B7D;
   transition: width .5s;
 }
 .navigation-page li a:hover {
@@ -180,7 +180,7 @@
   left: 0;
   top: -0.3rem;
   height: 0.6rem;
-  background: #E5781B;
+  background: #153B7D;
   width: 0;
   transition: width .5s;
 }
@@ -206,7 +206,7 @@
 .resources__list__two-col .resources__item__has-icon h5 > i {
   position: absolute;
   font-size: 2rem;
-  color: #E5781B;
+  color: #153B7D;
   top: 0.4rem;
   left: 0;
   font-weight: normal;
@@ -236,7 +236,7 @@
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
   font-size: 1.2rem;
-  color: #E5781B;
+  color: #153B7D;
 }
 .resources__item:hover h5 em { background: rgba(21,59,125,.2); }
 .resources__item:hover h5 em::before { border: 5px solid rgba(21,59,125,.07); }
@@ -273,7 +273,7 @@
   position: absolute;
   left: 0; top: 0; bottom: 0;
   width: 1px;
-  background: #E5781B;
+  background: #153B7D;
   transition: width .35s;
 }
 /* Arrow circle — absolute right */
@@ -299,7 +299,7 @@
 .crafts__item em i {
   position: absolute;
   left: 50%; top: 50%;
-  color: #E5781B;
+  color: #153B7D;
   transform: translate(-50%, -50%);
   font-size: 1.2rem;
 }
@@ -324,7 +324,7 @@
 /* Featured quote */
 .featured__quote {
   margin-top: 4rem;
-  border-top: 1px dashed rgba(60,196,255,.5);
+  border-top: 1px dashed rgba(26,162,221,.5);
   padding-top: 4rem;
 }
 .featured__quote-left.no-image { width: auto; float: none; }
@@ -347,12 +347,12 @@
   top: 50%;
   transform: translate(0, -50%);
   font-size: 1.9rem;
-  color: #E5781B;
+  color: #153B7D;
 }
 
 /* Featured quote inner — SVG sits absolute at top-left */
 .featured__quote-in { padding-left: 6.5rem; position: relative; }
-.featured__quote-in > svg { color: #3CC4FF; position: absolute; left: 2.5rem; top: 0; }
+.featured__quote-in > svg { color: #1AA2DD; position: absolute; left: 2.5rem; top: 0; }
 .featured__quote-text { margin-bottom: 2.5rem; }
 
 .story-person-info.no-photo { display: block; }
@@ -372,7 +372,7 @@
 }
 
 /* Corner decorative lines */
-.flex-feature__in .ia-line { position: absolute; background: #E5781B; }
+.flex-feature__in .ia-line { position: absolute; background: #153B7D; }
 .flex-feature__in .ia-line-1 { top: 0; left: 0; width: 1px; height: 40%; }
 .flex-feature__in .ia-line-2 { top: 0; left: 0; width: 25%; height: 1px; }
 .flex-feature__in .ia-line-3 { bottom: 0; right: 0; width: 1px; height: 40%; }
