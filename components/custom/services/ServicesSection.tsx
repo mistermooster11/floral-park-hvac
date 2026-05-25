@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRef, useEffect } from "react";
 import { services } from "@/data/services";
 
-export default function ServicesSection() {
+export default function ServicesSection({ limit }: { limit?: number }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const scrollStart = useRef(0);
@@ -88,7 +88,7 @@ export default function ServicesSection() {
         ref={wrapRef}
       >
         <div className="services__grid">
-          {services.map((svc) => (
+          {(limit ? services.slice(0, limit) : services).map((svc) => (
             <Link key={svc.number} href={svc.href} className="service-card">
               <div className="service-card__media">
                 <Image

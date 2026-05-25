@@ -41,3 +41,15 @@
   /* White — text on dark backgrounds, card surfaces, input fields */
   --color-white:      #FFFFFF;
 }
+
+/* Fix hardcoded orange box-shadows on why-cards to match new accent */
+.why-card {
+  box-shadow:
+    0 4px 24px rgba(21, 59, 125, 0.10),
+    0 1px 6px rgba(21, 59, 125, 0.06);
+}
+.why-card:hover {
+  box-shadow:
+    0 8px 40px rgba(21, 59, 125, 0.22),
+    0 2px 10px rgba(21, 59, 125, 0.12);
+}

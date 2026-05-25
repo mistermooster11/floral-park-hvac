@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "../client-theme.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -264,3 +263,5 @@ img {
     @apply font-sans;
   }
 }
+
+@import "../client-theme.css";

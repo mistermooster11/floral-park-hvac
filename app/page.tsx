@@ -1,4 +1,5 @@
 import "@/styles/homepage.css";
+import "@/styles/inner-pages.css";
 import HeroSection from "@/components/custom/hero/HeroSection";
 import MarqueeTicker from "@/components/custom/ticker/MarqueeTicker";
 import AboutSection from "@/components/custom/about/AboutSection";
@@ -18,7 +19,7 @@ export default function Home() {
         <MarqueeTicker />
       </div>
       <AboutSection />
-      <ServicesSection />
+      <ServicesSection limit={4} />
       <WhyChooseSection />
       <CTAFormSection />
       <TestimonialsSection />
