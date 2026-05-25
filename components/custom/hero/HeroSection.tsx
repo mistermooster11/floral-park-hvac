@@ -50,12 +50,12 @@ export default function HeroSection() {
 
   return (
     <section className="hero">
-      {/* Image background */}
+      {/* Video background */}
       <div className="hero__video-bg">
-        <img
-          src="/images/hvac-technician-rooftop-unit-maintenance.jpg"
-          alt="HVAC technician servicing a rooftop unit"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        <iframe
+          src="https://customer-ip9lnkk65px0t3ak.cloudflarestream.com/3253ca00a56fb3e02ebc7f6e5abd755f/iframe?autoplay=true&muted=true&loop=true&controls=false&preload=true"
+          className="hero__video-iframe"
+          allow="autoplay; fullscreen"
           aria-hidden="true"
         />
       </div>
