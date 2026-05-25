@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="footer__brand">
           <Link href="/">
             <Image
-              src="/images/logo-image-50.png"
+              src="/logos/Floral_dark_background.png"
               alt="Floral Park HVAC Logo"
               width={239}
               height={58}
