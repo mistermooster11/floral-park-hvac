@@ -6,6 +6,7 @@ import Footer from "@/components/custom/footer/Footer";
 import PageTransition from "@/components/custom/page-transition/PageTransition";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import SalePopup from "@/components/custom/popup/SalePopup"
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -86,6 +87,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <PageTransition />
+        <SalePopup businessName="Floral Park HVAC" expiryDate="June 7, 2026" trade="HVAC contractors" />
         <Header />
         <main>{children}</main>
         <Footer />
