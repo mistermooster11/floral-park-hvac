@@ -87,7 +87,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <PageTransition />
-        <SalePopup businessName="Floral Park HVAC" expiryDate="June 7, 2026" trade="HVAC contractors" />
+        <SalePopup businessName="Floral Park HVAC" expiryDate="June 15, 2026" trade="HVAC contractors" />
         <Header />
         <main>{children}</main>
         <Footer />
