@@ -263,3 +263,5 @@ img {
     @apply font-sans;
   }
 }
+
+@import "../client-theme.css";
